@@ -1,0 +1,18 @@
+_profile: stakeholder_requirement
+_id: 26fa25ab-c117-46fa-9cd5-a0cd10c8bcfd
+_label: STK_SAFETY-3
+_parent_id: 74e23fd2-01c7-44e2-9d33-c48493484b39
+acceptance_criteria: For each fault class, safe-state and HMI indication behavior is defined and verified; motor output is de‑energized as applicable.
+brief: Enter a well-defined safe state on fault and indicate status.
+dependencies:
+  []
+details: When a fault is detected, the system shall transition to a defined safe state and clearly communicate the status to the operator via the HMI.
+milestone: M1
+notes:
+  []
+priority: high
+reference_sources:
+  - cafffa52-97f4-4aff-8cfe-d816413c9dcc
+status: proposed
+type:
+  - safety

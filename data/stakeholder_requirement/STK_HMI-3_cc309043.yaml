@@ -1,0 +1,18 @@
+_profile: stakeholder_requirement
+_id: cc309043-3d59-4c30-991e-ba979cbd8e04
+_label: STK_HMI-3
+_parent_id: 06c12a2b-e182-46c1-9d6a-1a2924142594
+acceptance_criteria: Side-by-side tests confirm identical HMI flows and state indications across HW and simulation.
+brief: Ensure consistent HMI behavior between hardware and simulation.
+dependencies:
+  []
+details: The simulation shall present the same HMI states and behaviors as the hardware device for operator-facing interactions.
+milestone: M1
+notes:
+  []
+priority: medium
+reference_sources:
+  - cafffa52-97f4-4aff-8cfe-d816413c9dcc
+status: proposed
+type:
+  - functional

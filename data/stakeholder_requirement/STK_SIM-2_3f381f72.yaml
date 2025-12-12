@@ -1,0 +1,19 @@
+_profile: stakeholder_requirement
+_id: 3f381f72-ef29-4f38-a02a-d97b3b3726d3
+_label: STK_SIM-2
+_parent_id: 12d98d6f-53be-42d9-9dfe-5d013fdbfa06
+acceptance_criteria: Defined set of injectable faults and scenarios; demonstration confirms expected safety responses.
+brief: Support fault injection and scenario demonstration in simulation.
+dependencies:
+  []
+details: The simulation shall allow controlled fault injection and scenario playback to demonstrate safety behavior and state transitions.
+milestone: M1
+notes:
+  []
+priority: medium
+reference_sources:
+  - cafffa52-97f4-4aff-8cfe-d816413c9dcc
+status: proposed
+type:
+  - functional
+  - safety

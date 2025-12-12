@@ -1,0 +1,19 @@
+_profile: stakeholder_requirement
+_id: 0ab1a93a-444f-4ab1-984a-d1fd4a11d51e
+_label: STK_UPDATES-2
+_parent_id: 6d215271-bb01-4d21-b491-f718f6dc16c9
+acceptance_criteria: Safety partitioning and protections documented; regression checks confirm safety behavior unchanged across updates.
+brief: Protect safety-critical behavior from unintended changes across updates.
+dependencies:
+  []
+details: Update mechanisms and process shall preserve safety‑critical behavior and prevent unintended modifications to safety‑related functions.
+milestone: M1
+notes:
+  []
+priority: high
+reference_sources:
+  - cafffa52-97f4-4aff-8cfe-d816413c9dcc
+status: proposed
+type:
+  - safety
+  - non-functional

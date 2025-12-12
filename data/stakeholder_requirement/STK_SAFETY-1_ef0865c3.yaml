@@ -1,0 +1,18 @@
+_profile: stakeholder_requirement
+_id: ef0865c3-b797-4f08-a179-d347c8e4af1b
+_label: STK_SAFETY-1
+_parent_id: 74e23fd2-01c7-44e2-9d33-c48493484b39
+acceptance_criteria: Power-up sequence executes self-checks; if any check fails, motor remains disabled and fault is indicated on the HMI.
+brief: Perform startup self-checks before enabling motor operation.
+dependencies:
+  []
+details: On power-up, the controller shall execute a defined set of self-tests covering safety‑critical subsystems. Motor enable must be inhibited until all startup checks pass.
+milestone: M1
+notes:
+  []
+priority: high
+reference_sources:
+  - cafffa52-97f4-4aff-8cfe-d816413c9dcc
+status: proposed
+type:
+  - safety

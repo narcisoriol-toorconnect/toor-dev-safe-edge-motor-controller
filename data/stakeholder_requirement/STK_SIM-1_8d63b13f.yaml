@@ -1,0 +1,18 @@
+_profile: stakeholder_requirement
+_id: 8d63b13f-6ee0-4d63-b08b-769253a594e3
+_label: STK_SIM-1
+_parent_id: 12d98d6f-53be-42d9-9dfe-5d013fdbfa06
+acceptance_criteria: Simulation reproduces device states and HMI flows; parity demonstrated with HW.
+brief: Provide a browser-based simulation HMI mirroring the device.
+dependencies:
+  []
+details: A simulation environment shall expose the same operational states and behaviors as the hardware and present the same HMI via a browser.
+milestone: M1
+notes:
+  []
+priority: medium
+reference_sources:
+  - cafffa52-97f4-4aff-8cfe-d816413c9dcc
+status: proposed
+type:
+  - functional

@@ -1,0 +1,18 @@
+_profile: stakeholder_requirement
+_id: e67033c7-8252-4670-b632-1c7ed6d3c25c
+_label: STK_SIM-3
+_parent_id: 12d98d6f-53be-42d9-9dfe-5d013fdbfa06
+acceptance_criteria: Demo scripts and scenarios run entirely in simulation; parity with device documented for covered flows.
+brief: Enable demonstration without physical hardware.
+dependencies:
+  []
+details: Stakeholders shall be able to demonstrate and evaluate the product using the simulation environment without access to the hardware.
+milestone: M1
+notes:
+  []
+priority: medium
+reference_sources:
+  - cafffa52-97f4-4aff-8cfe-d816413c9dcc
+status: proposed
+type:
+  - non-functional

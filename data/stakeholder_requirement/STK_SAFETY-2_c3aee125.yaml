@@ -1,0 +1,18 @@
+_profile: stakeholder_requirement
+_id: c3aee125-62ec-43ae-9ac0-149741d85de8
+_label: STK_SAFETY-2
+_parent_id: 74e23fd2-01c7-44e2-9d33-c48493484b39
+acceptance_criteria: Defined list of monitored parameters; fault thresholds documented; deterministic detection verified via tests; HMI indicates any fault state.
+brief: Monitor critical runtime conditions and detect faults deterministically.
+dependencies:
+  []
+details: Continuously monitor key operating parameters (e.g., current, temperature, sensors) during operation and detect abnormal conditions deterministically.
+milestone: M1
+notes:
+  []
+priority: high
+reference_sources:
+  - cafffa52-97f4-4aff-8cfe-d816413c9dcc
+status: proposed
+type:
+  - safety

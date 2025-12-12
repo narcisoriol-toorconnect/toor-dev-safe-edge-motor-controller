@@ -1,0 +1,18 @@
+_profile: stakeholder_requirement
+_id: 12537c56-c0ee-4253-980b-84cfea4b23aa
+_label: STK_HMI-1
+_parent_id: 06c12a2b-e182-46c1-9d6a-1a2924142594
+acceptance_criteria: Display layouts for normal, warning, and fault states are defined and implemented; visibility validated under expected conditions.
+brief: Provide a physical display showing system state and faults.
+dependencies:
+  []
+details: The device shall include a built‑in display that presents current operating state, motor status, and any active fault conditions.
+milestone: M1
+notes:
+  []
+priority: medium
+reference_sources:
+  - cafffa52-97f4-4aff-8cfe-d816413c9dcc
+status: proposed
+type:
+  - functional

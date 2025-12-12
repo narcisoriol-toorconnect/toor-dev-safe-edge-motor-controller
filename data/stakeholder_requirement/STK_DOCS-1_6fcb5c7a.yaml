@@ -1,0 +1,18 @@
+_profile: stakeholder_requirement
+_id: 6fcb5c7a-bba6-4fcb-862f-20284b2e9ff2
+_label: STK_DOCS-1
+_parent_id: 6768d086-b265-4768-a2af-6eb98c61d37e
+acceptance_criteria: Documentation artifacts produced and kept current with implementation; review completed.
+brief: Provide system overview and functional description.
+dependencies:
+  []
+details: Deliver documentation covering overall system architecture and functional behavior, kept consistent with the implemented system.
+milestone: M1
+notes:
+  []
+priority: medium
+reference_sources:
+  - cafffa52-97f4-4aff-8cfe-d816413c9dcc
+status: proposed
+type:
+  - non-functional

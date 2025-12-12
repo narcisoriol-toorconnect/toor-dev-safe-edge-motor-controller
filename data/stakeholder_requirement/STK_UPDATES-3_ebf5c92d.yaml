@@ -1,0 +1,18 @@
+_profile: stakeholder_requirement
+_id: ebf5c92d-ca29-4bf5-9bb0-4a7bac3a2798
+_label: STK_UPDATES-3
+_parent_id: 6d215271-bb01-4d21-b491-f718f6dc16c9
+acceptance_criteria: Version string displayed in an accessible HMI view and included in logs/diagnostics; verified in HW and simulation.
+brief: Make the running software version visible to the operator.
+dependencies:
+  []
+details: Operators shall be able to identify the exact software version running on the device from the HMI.
+milestone: M1
+notes:
+  []
+priority: medium
+reference_sources:
+  - cafffa52-97f4-4aff-8cfe-d816413c9dcc
+status: proposed
+type:
+  - non-functional

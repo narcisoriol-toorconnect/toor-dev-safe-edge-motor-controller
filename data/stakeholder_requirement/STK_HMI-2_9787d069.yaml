@@ -1,0 +1,19 @@
+_profile: stakeholder_requirement
+_id: 9787d069-f874-4787-9024-12e9d66ab1cd
+_label: STK_HMI-2
+_parent_id: 06c12a2b-e182-46c1-9d6a-1a2924142594
+acceptance_criteria: List of allowed commands documented; invalid operations are blocked and indicated; behavior consistent across HW and simulation.
+brief: Limit operator actions to safe, clearly defined commands.
+dependencies:
+  []
+details: Operator interactions shall be constrained to a defined set of safe commands; unsafe or ambiguous actions shall be prevented.
+milestone: M1
+notes:
+  []
+priority: medium
+reference_sources:
+  - cafffa52-97f4-4aff-8cfe-d816413c9dcc
+status: proposed
+type:
+  - functional
+  - safety

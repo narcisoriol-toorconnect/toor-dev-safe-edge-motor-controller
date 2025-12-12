@@ -1,0 +1,18 @@
+_profile: stakeholder_requirement
+_id: b77c79fc-2735-477c-a902-4440a6d3eae4
+_label: STK_UPDATES-1
+_parent_id: 6d215271-bb01-4d21-b491-f718f6dc16c9
+acceptance_criteria: Update flow and rollback behavior documented and demonstrated in HW and simulation; versioning visible to operator.
+brief: Support controlled software updates with defined rollback.
+dependencies:
+  []
+details: The product shall support controlled update and rollback behavior suitable for regulated environments and field deployment.
+milestone: M1
+notes:
+  []
+priority: medium
+reference_sources:
+  - cafffa52-97f4-4aff-8cfe-d816413c9dcc
+status: proposed
+type:
+  - non-functional
