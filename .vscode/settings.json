@@ -1,0 +1,7 @@
+{
+    "hephora.dataDir": "/workspace/data",
+    "hephora.schemasDir": "/workspace/schemas",
+    "hephora.scriptsDir": "/workspace/scripts",
+    "hephora.viewsDir": "/workspace/views",
+    "hephora.logLevel": "debug"
+}

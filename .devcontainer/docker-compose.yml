@@ -1,6 +1,6 @@
 services:
   vscode:
-    container_name: toor-dev-demo-project-vscode
+    container_name: toor-dev-safe-edge-motor-controller-vscode
     build:
       context: .
       dockerfile: Dockerfile
@@ -18,7 +18,7 @@ services:
       - devnet
 
   http_server:
-    container_name: toor-dev-demo-project-http-server
+    container_name: toor-dev-safe-edge-motor-controller-http-server
     build:
       context: .
       dockerfile: Dockerfile
