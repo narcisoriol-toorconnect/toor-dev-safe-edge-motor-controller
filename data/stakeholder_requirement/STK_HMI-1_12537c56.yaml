@@ -2,11 +2,11 @@ _profile: stakeholder_requirement
 _id: 12537c56-c0ee-4253-980b-84cfea4b23aa
 _label: STK_HMI-1
 _parent_id: 06c12a2b-e182-46c1-9d6a-1a2924142594
-acceptance_criteria: Display layouts for normal, warning, and fault states are defined and implemented; visibility validated under expected conditions.
+acceptance_criteria: "- Views present: Status, Faults, Version/Info, Diagnostics; accessible within ≤ 2 actions.\n- Status shows: state, RPM, DC bus V, phase current, temperature, version.\n- UI refresh ≥ 10 Hz; state‑change to display latency ≤ 200 ms measured.\n- Color semantics applied consistently; contrast ≥ 4.5:1 verified on representative display.\n- Faults view shows active fault with code and timestamp; history retains ≥ 50 recent entries (from persistent log).\n- No hidden states: every safety state has a clear label and color."
 brief: Provide a physical display showing system state and faults.
 dependencies:
   []
-details: The device shall include a built‑in display that presents current operating state, motor status, and any active fault conditions.
+details: "Provide a built‑in HMI optimized for clarity and safety. Required views: (1) Status (mode/state, RPM, bus V, current, temperature), (2) Faults (active + history), (3) Version/Info, (4) Diagnostics (read‑only). UI semantics: Normal=green, Warning=amber, Fault=red; minimum contrast ≥ 4.5:1. Update cadence: ≥ 10 Hz refresh with ≤ 200 ms end‑to‑end latency from state change to on‑screen update. English language for demo scope. All safety/fault states must visibly dominate the layout (no ambiguous icons)."
 milestone: M1
 notes:
   []

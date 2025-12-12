@@ -1,0 +1,18 @@
+_profile: stakeholder_requirement
+_id: 12f3d4ef-7ecd-42f3-bd38-5d416f18ef2a
+_label: STK_LOGGING-4
+_parent_id: 391b757e-3605-491b-b4c1-6caf7db542b8
+acceptance_criteria: "- Log level and category filters configurable via settings; persist across reboot.\n- Flood control caps repeated events and emits summaries (e.g., \"X suppressed\").\n- Tests verify filters reduce log volume and do not drop ERROR severity.\n- Configuration changes logged with CMD/CFG codes."
+brief: Allow log levels, categories, and rate‑limiting configuration.
+dependencies:
+  []
+details: Provide configurable log level (INFO/WARN/ERROR) and category enables. Implement flood control (e.g., max N identical events per second) with summary lines. Config persists across reboots.
+milestone: M1
+notes:
+  []
+priority: medium
+reference_sources:
+  []
+status: proposed
+type:
+  - non-functional

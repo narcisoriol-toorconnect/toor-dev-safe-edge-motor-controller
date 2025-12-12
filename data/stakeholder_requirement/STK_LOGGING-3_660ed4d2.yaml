@@ -1,0 +1,18 @@
+_profile: stakeholder_requirement
+_id: 660ed4d2-78c8-460e-be6b-48aeb1c92a5e
+_label: STK_LOGGING-3
+_parent_id: 391b757e-3605-491b-b4c1-6caf7db542b8
+acceptance_criteria: "- Export completes ≤ 10 s for 1,000 entries.\n- Bundle includes version/slot info and a checksum manifest.\n- Filters by date and category work; sample exports reviewed.\n- Export is read‑only; no modification of device config.\n- Simulation can generate equivalent exports for parity."
+brief: Provide diagnostic log export for support and audits.
+dependencies:
+  []
+details: Offer log export over USB mass‑storage as a .zip or .log bundle including logs, version, slot, and device info. Filters by date range and category. No PII or secrets are logged; bundle is read‑only and verifiable via checksum.
+milestone: M1
+notes:
+  []
+priority: medium
+reference_sources:
+  []
+status: proposed
+type:
+  - non-functional

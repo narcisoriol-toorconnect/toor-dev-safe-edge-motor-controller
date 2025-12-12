@@ -2,11 +2,11 @@ _profile: stakeholder_requirement
 _id: 54984162-6fb7-4498-974c-2c4922a8cf66
 _label: STK_DOCS-2
 _parent_id: 6768d086-b265-4768-a2af-6eb98c61d37e
-acceptance_criteria: Safety concept, state machine, and fault response documentation approved; traceability established.
+acceptance_criteria: "- Safety concept document contains hazards, assumptions, mitigations, and fault class definitions.\n- State machine diagram produced (RUN, WARN, FAULT, EMERGENCY, SAFE) with transitions and timing budgets.\n- Thresholds/latencies match STK_SAFETY‑1/2/3.\n- Traceability matrix links STK → tests and evidences; reviewed and approved."
 brief: Define safety concept, operating states, and fault handling.
 dependencies:
   []
-details: Document the safety concept, state model, and fault handling strategy with traceability to requirements and tests.
+details: "Document the safety concept, state machine, and fault handling with traceability. Include: hazard list (lite), fault classes, detection thresholds, safe‑state actions, timing budgets, and a state machine diagram. Provide bidirectional traceability between stakeholder requirements and tests."
 milestone: M1
 notes:
   []

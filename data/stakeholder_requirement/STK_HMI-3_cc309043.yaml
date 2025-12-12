@@ -2,11 +2,11 @@ _profile: stakeholder_requirement
 _id: cc309043-3d59-4c30-991e-ba979cbd8e04
 _label: STK_HMI-3
 _parent_id: 06c12a2b-e182-46c1-9d6a-1a2924142594
-acceptance_criteria: Side-by-side tests confirm identical HMI flows and state indications across HW and simulation.
+acceptance_criteria: "- Parity matrix executed across HW and simulation: views reachable with identical labels and flows.\n- Command flows (Start/Stop/ACK/Mode/Speed) behave identically including interlocks and error messaging.\n- Fault indications and recovery messaging match content and sequence.\n- Timing variance between HW and sim ≤ 10% for display updates and command response.\n- Parity score ≥ 95% pass rate across scenarios; any deviations documented with rationale."
 brief: Ensure consistent HMI behavior between hardware and simulation.
 dependencies:
   []
-details: The simulation shall present the same HMI states and behaviors as the hardware device for operator-facing interactions.
+details: "Ensure functional parity between hardware HMI and browser‑based simulation for operator‑facing behaviors. Parity scope: views, states, commands, messages, and fault/ACK flows. Tolerance: timing differences ≤ 10% are acceptable; visual layout may differ but naming and hierarchy must match. Provide a parity test matrix covering all operator flows and fault classes."
 milestone: M1
 notes:
   []

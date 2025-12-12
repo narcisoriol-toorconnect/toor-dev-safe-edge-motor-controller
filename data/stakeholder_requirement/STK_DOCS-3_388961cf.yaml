@@ -2,11 +2,11 @@ _profile: stakeholder_requirement
 _id: 388961cf-5f16-4889-b13b-05ebbc0c51b9
 _label: STK_DOCS-3
 _parent_id: 6768d086-b265-4768-a2af-6eb98c61d37e
-acceptance_criteria: Test strategy baseline and evidence set produced; reviews completed; links to requirements established.
+acceptance_criteria: "- Strategy document defines test levels, coverage goals, tools, and acceptance gates.\n- Evidence bundle includes logs, screenshots, and scenario exports from simulation demonstrating each STK behavior.\n- Traceability matrix maintained; all STK entries have at least one mapped test/evidence item.\n- Review completed; gaps tracked with remediation plan."
 brief: Provide test strategy and evidence aligned with implementation.
 dependencies:
   []
-details: Deliver a test strategy with corresponding evidence to verify behaviors, safety responses, and lifecycle processes.
+details: "Provide a pragmatic test strategy and evidence set aligned with the demo scope. Include: unit tests for core utilities, integration tests for monitoring and HMI flows, qualification‑style scenarios for safety responses, and update/rollback tests. Maintain a traceability matrix from requirements to tests and evidence."
 milestone: M1
 notes:
   []

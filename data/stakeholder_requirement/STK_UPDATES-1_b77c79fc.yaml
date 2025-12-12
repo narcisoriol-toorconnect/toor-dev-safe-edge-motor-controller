@@ -2,11 +2,11 @@ _profile: stakeholder_requirement
 _id: b77c79fc-2735-477c-a902-4440a6d3eae4
 _label: STK_UPDATES-1
 _parent_id: 6d215271-bb01-4d21-b491-f718f6dc16c9
-acceptance_criteria: Update flow and rollback behavior documented and demonstrated in HW and simulation; versioning visible to operator.
+acceptance_criteria: "- Accepts only signed packages; signature and payload hash verified before install.\n- A/B slot install and atomic switch implemented; boot failure triggers automatic rollback.\n- Power‑loss during install does not brick device; system either resumes or reverts.\n- Update of 1 MiB completes ≤ 60 s on reference hardware.\n- HMI shows update progress, success/failure; persistent ASCII logs include package version, slot, result, and reason."
 brief: Support controlled software updates with defined rollback.
 dependencies:
   []
-details: The product shall support controlled update and rollback behavior suitable for regulated environments and field deployment.
+details: "Provide a controlled update and rollback mechanism suitable for demos and regulated workflows. Update channel: USB mass‑storage file drop to /updates. Package: signed archive (.pkg) containing manifest.json (version, target partition, hash) and payload; signature ECDSA‑P256 over SHA‑256. Dual A/B slots: install to inactive slot, verify, then atomically switch; on boot failure auto‑rollback. Power‑loss safety: resume or rollback without bricking. Max update time: ≤ 60 s for 1 MiB payload on reference HW."
 milestone: M1
 notes:
   []

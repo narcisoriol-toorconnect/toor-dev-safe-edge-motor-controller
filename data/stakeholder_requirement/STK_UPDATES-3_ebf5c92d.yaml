@@ -2,11 +2,11 @@ _profile: stakeholder_requirement
 _id: ebf5c92d-ca29-4bf5-9bb0-4a7bac3a2798
 _label: STK_UPDATES-3
 _parent_id: 6d215271-bb01-4d21-b491-f718f6dc16c9
-acceptance_criteria: Version string displayed in an accessible HMI view and included in logs/diagnostics; verified in HW and simulation.
+acceptance_criteria: "- HMI Status shows version string (e.g., v1.2.3+abc123 2025-12-12) within 2 actions from home.\n- Version/Info page lists active slot and full manifest data.\n- Boot logs persist version and slot each startup.\n- Diagnostic export includes version; simulation shows the same string for corresponding build."
 brief: Make the running software version visible to the operator.
 dependencies:
   []
-details: Operators shall be able to identify the exact software version running on the device from the HMI.
+details: "Expose the running software version clearly to operators and in diagnostics. Version scheme: SemVer (MAJOR.MINOR.PATCH) + short git SHA + build date. Locations: Status view footer, Version/Info page, boot log line, diagnostic export. Version must reflect active slot (A/B) and package manifest."
 milestone: M1
 notes:
   []

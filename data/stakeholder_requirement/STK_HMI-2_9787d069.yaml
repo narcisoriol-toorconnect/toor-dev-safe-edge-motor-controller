@@ -2,11 +2,11 @@ _profile: stakeholder_requirement
 _id: 9787d069-f874-4787-9024-12e9d66ab1cd
 _label: STK_HMI-2
 _parent_id: 06c12a2b-e182-46c1-9d6a-1a2924142594
-acceptance_criteria: List of allowed commands documented; invalid operations are blocked and indicated; behavior consistent across HW and simulation.
+acceptance_criteria: "- Attempting Start under any latched FAULT/EMERGENCY is blocked with HMI message, logged as rejected.\n- Speed setpoint clamped [0,100] and rate‑limited ≤ 20%/s; tests verify enforcement.\n- Debounce: ≤ 1 unintended activation per 10,000 presses in test harness.\n- Long‑press Start ≥ 1 s required; shorter presses ignored.\n- Acknowledge only succeeds when condition cleared; otherwise rejected with reason.\n- Every command generates a persistent log entry with outcome and reason."
 brief: Limit operator actions to safe, clearly defined commands.
 dependencies:
   []
-details: Operator interactions shall be constrained to a defined set of safe commands; unsafe or ambiguous actions shall be prevented.
+details: "Restrict operator actions to a safe, minimal set with interlocks. Allowed commands: Start, Stop, Acknowledge Fault, Mode Select (Stop/Run), Speed Setpoint (0–100%, step 1%). Interlocks: Start allowed only when no latched fault and all enables true; Acknowledge only when underlying condition cleared; Speed changes rate‑limited to ≤ 20%/s and clamped to allowed range. Input hygiene: 50 ms debounce; Start requires 1 s long‑press; Emergency stop (if present) overrides immediately. All commands logged (ASCII) with timestamp and result (accepted/rejected+reason)."
 milestone: M1
 notes:
   []

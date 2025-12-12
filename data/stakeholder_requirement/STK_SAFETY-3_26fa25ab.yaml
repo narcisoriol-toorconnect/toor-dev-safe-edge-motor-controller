@@ -2,11 +2,11 @@ _profile: stakeholder_requirement
 _id: 26fa25ab-c117-46fa-9cd5-a0cd10c8bcfd
 _label: STK_SAFETY-3
 _parent_id: 74e23fd2-01c7-44e2-9d33-c48493484b39
-acceptance_criteria: For each fault class, safe-state and HMI indication behavior is defined and verified; motor output is de‑energized as applicable.
+acceptance_criteria: "- Overcurrent EMERGENCY: PWM disabled ≤ 1 ms from detection; brake engaged ≤ 100 ms; relay open ≤ 100 ms; log RT_SAFE_EMERG with code.\n- Undervoltage FAULT: torque ramps to 0 A ≤ 10 ms, PWM disabled ≤ 20 ms, brake engaged ≤ 100 ms; HMI shows fault + safe state; log RT_SAFE_FAULT.\n- Overtemp FAULT: behavior as above; HMI includes temperature readout.\n- Encoder loss in RUN: FAULT behavior as above.\n- Watchdog EMERGENCY: immediate PWM disable ≤ 1 ms; system in safe state; log event.\n- Recovery behaviors verified: FAULT clears only after ACK+condition normal; EMERGENCY requires power‑cycle/privileged reset.\n- All events recorded in persistent ASCII logs with timestamp, severity, code, and message."
 brief: Enter a well-defined safe state on fault and indicate status.
 dependencies:
   []
-details: When a fault is detected, the system shall transition to a defined safe state and clearly communicate the status to the operator via the HMI.
+details: "Define and enforce a deterministic safe state for each fault class. Actions when transitioning from RUN to safe state:\n- Disable PWM/drive: immediate on EMERGENCY (≤ 1 ms), within ≤ 20 ms on FAULT.\n- Torque ramp‑down: when feasible on FAULT, linear current ramp‑down to 0 A within 10 ms before disabling PWM; EMERGENCY skips ramp.\n- Engage brake: assert brake output within ≤ 100 ms (if fitted).\n- Open motor contactor/relay: open within ≤ 100 ms; keep logic rail powered for HMI/logging.\n- HMI: show fault name/code and “Safe state active”.\nFault → action map (default): Overcurrent→EMERGENCY (immediate PWM disable, brake, relay open); Undervoltage→FAULT (ramp‑down then disable); Overtemp→FAULT; Encoder loss (in RUN)→FAULT; Watchdog expiry→EMERGENCY.\nRecovery policy: WARN non‑latching; FAULT latched until operator ACK and condition clears; EMERGENCY latched until power‑cycle or privileged reset. All transitions and actions are logged persistently (ASCII)."
 milestone: M1
 notes:
   []
