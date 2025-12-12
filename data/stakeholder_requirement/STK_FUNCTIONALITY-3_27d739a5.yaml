@@ -1,0 +1,23 @@
+_profile: stakeholder_requirement
+_id: 27d739a5-4cac-47d7-9cad-0653b888fcf7
+_label: STK_FUNCTIONALITY-3
+_parent_id: 8f547497-9805-4f54-a120-02a3cc17e00f
+acceptance_criteria: "- Interface list approved; each interface has purpose, direction, and basic electrical assumptions documented.\n- HMI and update I/O paths verified in demo.\n- Boot presence checks for required signals per STK_SAFETY‑1.\n- Interfaces reflected in documentation and architecture diagrams."
+brief: Interfaces and I/O overview.
+date_updated: 2025-12-12
+dependencies:
+  - ef0865c3-b797-4f08-a179-d347c8e4af1b
+  - b77c79fc-2735-477c-a902-4440a6d3eae4
+  - 12537c56-c0ee-4253-980b-84cfea4b23aa
+details: "Define external interfaces for the demo platform: motor power stage (3‑phase bridge), DC bus input, current/voltage/temp sensors, encoder/Hall input, brake control output, motor contactor/relay control, HMI display and input controls, USB mass‑storage for updates/exports. Specify electrical/logic levels as applicable for the demo and identify required presence checks at boot."
+milestone: M1
+notes:
+  []
+priority: medium
+rationale: Makes assumptions explicit and anchors hardware/software boundaries for the demo.
+reference_sources:
+  - cafffa52-97f4-4aff-8cfe-d816413c9dcc
+status: proposed
+type:
+  - functional
+  - non-functional

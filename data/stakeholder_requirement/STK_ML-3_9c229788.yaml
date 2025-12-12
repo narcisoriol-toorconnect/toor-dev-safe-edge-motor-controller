@@ -1,0 +1,21 @@
+_profile: stakeholder_requirement
+_id: 9c229788-a5dc-4c22-b880-076e59238d3e
+_label: STK_ML-3
+_parent_id: 9cac0276-f2d1-4cac-8184-075d3d023bc8
+acceptance_criteria: "- Inference rate ≥ 1 Hz (target 2 Hz); per-inference compute ≤ 10 ms on reference HW.\n- Resource limits: average CPU ≤ 5%, peak RAM usage ≤ 64 KiB, model package size ≤ 200 KiB.\n- No control path from ML to Safety Core; verified via partitioning and tests; disabling ML leaves device behavior unchanged.\n- HMI displays health score (0–100), category (OK/Check soon/Service required), and top contributors.\n- Scenario tests: sustained high temperature trend → \"Check soon\" within ≤ 5 min; repeated overcurrent WARNs → \"Service required\" within ≤ 10 events/hour; normal operation → \"OK\".\n- Logs include advisory updates with category and score (ML_ADV_xx codes)."
+brief: On‑device anomaly scoring (advisory only).
+date_updated: 2025-12-12
+dependencies:
+  - 0ab1a93a-444f-4ab1-984a-d1fd4a11d51e
+  - 12537c56-c0ee-4253-980b-84cfea4b23aa
+details: "Run mandatory on-device predictive maintenance scoring in the Application partition. Compute a health score (0–100) and a maintenance advisory category (OK / Check soon / Service required) from rolling features derived on-device: RPM statistics, current RMS/peaks and asymmetry, DC bus voltage stability, temperature level/trend (ΔT/Δt), fault/event rate, and operating time. Inference rate ≥ 1 Hz (target 2 Hz); single inference ≤ 10 ms. Output is advisory only and must not modify Safety Core thresholds or interlocks. Degradation/failure of ML scoring must not affect motion or safety functions. HMI presents health score, category, and top contributing signals."
+milestone: M2
+notes:
+  []
+priority: low
+rationale: Provide on-device, low-overhead, safety-neutral maintenance advisories to enhance demos and support without altering safety behavior.
+reference_sources:
+  - cafffa52-97f4-4aff-8cfe-d816413c9dcc
+status: proposed
+type:
+  - non-functional

@@ -1,0 +1,20 @@
+_profile: stakeholder_requirement
+_id: cdc7e1bc-3e3c-4dc7-83bd-5b6ff0ae08fe
+_label: STK_FUNCTIONALITY-1
+_parent_id: 8f547497-9805-4f54-a120-02a3cc17e00f
+acceptance_criteria: "- Start/Stop, Mode select, Speed setpoint implemented and exercised in demo scripts.\n- HMI shows state, RPM, bus voltage, current, temperature, and version.\n- Faults during operation trigger defined safe‑state behaviors.\n- Simulation demonstrates identical flows for the above.\n"
+brief: "Functional summary: single motor control with supervision and HMI."
+date_updated: 2025-12-12
+dependencies:
+  []
+details: "The device controls a single electric motor with integrated safety supervision. Core functions: Start/Stop, Mode select (Stop/Run), speed setpoint (0–100%), speed regulation, health monitoring, safe‑state transition on faults, and an HMI that displays states, faults, and version. Provides a simulation presenting the same behaviors for demos. Behaves deterministically under all operating conditions."
+milestone: M1
+notes:
+  []
+priority: high
+rationale: Make the product purpose and top‑level capabilities explicit for client sign‑off and downstream design.
+reference_sources:
+  - cafffa52-97f4-4aff-8cfe-d816413c9dcc
+status: proposed
+type:
+  - functional

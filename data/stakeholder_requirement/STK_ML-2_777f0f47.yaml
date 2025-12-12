@@ -1,0 +1,20 @@
+_profile: stakeholder_requirement
+_id: 777f0f47-2308-477f-b964-9eea18471f59
+_label: STK_ML-2
+_parent_id: 9cac0276-f2d1-4cac-8184-075d3d023bc8
+acceptance_criteria: "- Reproducible training pipeline with fixed seeds and environment.\n- Model card documents metrics on validation datasets and limitations.\n- Artifacts include feature schema and normalization parameters."
+brief: Offline model training pipeline and artifacts.
+date_updated: 2025-12-12
+dependencies:
+  - bf792f53-c9df-4f79-b0d0-0bb066093391
+details: Train models off‑device using exported datasets. Define feature set, normalization, evaluation metrics, and overfitting controls. Produce versioned model artifacts and documentation of performance limits and caveats.
+milestone: M2
+notes:
+  []
+priority: medium
+rationale: Establishes a repeatable, auditable path to create models suitable for deployment.
+reference_sources:
+  - cafffa52-97f4-4aff-8cfe-d816413c9dcc
+status: proposed
+type:
+  - non-functional

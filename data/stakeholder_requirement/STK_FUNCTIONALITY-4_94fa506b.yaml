@@ -1,0 +1,23 @@
+_profile: stakeholder_requirement
+_id: 94fa506b-fb00-44fa-969a-f4c974e0ff1e
+_label: STK_FUNCTIONALITY-4
+_parent_id: 8f547497-9805-4f54-a120-02a3cc17e00f
+acceptance_criteria: "- Step tests meet ±5% accuracy within 1 s for 20% steps.\n- Rate limit enforced ≤ 20%/s; verified with scripted ramp.\n- Start latency ≤ 150 ms; Stop to zero‑torque ≤ 50 ms in FAULT‑free conditions.\n- Limits and interlocks prevent exceeding safety thresholds; logs show guard enforcement."
+brief: Control performance (demo defaults).
+date_updated: 2025-12-12
+dependencies:
+  - c3aee125-62ec-43ae-9ac0-149741d85de8
+  - 9787d069-f874-4787-9024-12e9d66ab1cd
+  - 26fa25ab-c117-46fa-9cd5-a0cd10c8bcfd
+details: "Provide basic speed control performance suitable for demos. Defaults (tunable): setpoint range 0–100%; steady‑state speed accuracy ±5% within 1 s after a step ≤ 20%; rate limit ≤ 20%/s; Start command to motion output latency ≤ 150 ms in RUN; Stop to zero‑torque ≤ 50 ms (non‑EMERGENCY). Respect interlocks and monitoring limits at all times; never exceed EMERGENCY thresholds."
+milestone: M1
+notes:
+  []
+priority: medium
+rationale: Sets realistic, testable demo performance targets without over‑constraining future design.
+reference_sources:
+  - cafffa52-97f4-4aff-8cfe-d816413c9dcc
+status: proposed
+type:
+  - functional
+  - safety

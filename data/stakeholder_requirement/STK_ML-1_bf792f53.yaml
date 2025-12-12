@@ -1,0 +1,21 @@
+_profile: stakeholder_requirement
+_id: bf792f53-c9df-4f79-b0d0-0bb066093391
+_label: STK_ML-1
+_parent_id: 9cac0276-f2d1-4cac-8184-075d3d023bc8
+acceptance_criteria: "- Telemetry selection configurable; persisted setting.\n- Exports include schema/version metadata and at least 10 hours of representative data.\n- No PII or secrets; bundle verified via checksum; importable by provided tooling."
+brief: Predictive maintenance data collection and export.
+date_updated: 2025-12-12
+dependencies:
+  - bf9059b0-3735-4f90-adc2-6136d866b065
+  - 660ed4d2-78c8-460e-be6b-48aeb1c92a5e
+details: "Extend logging/export to capture telemetry for offline training: RPM, current (RMS/peaks), DC bus voltage, temperature trends, fault/event rates, operating time. Configurable sampling/aggregation; exports as de‑identified CSV/JSON with version/slot context."
+milestone: M2
+notes:
+  []
+priority: medium
+rationale: High‑quality datasets are prerequisite for ML without changing safety behavior.
+reference_sources:
+  - cafffa52-97f4-4aff-8cfe-d816413c9dcc
+status: proposed
+type:
+  - non-functional

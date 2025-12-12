@@ -1,0 +1,23 @@
+_profile: stakeholder_requirement
+_id: 71fac255-fb97-41fa-ac5e-efcea0ef8352
+_label: STK_FUNCTIONALITY-2
+_parent_id: 8f547497-9805-4f54-a120-02a3cc17e00f
+acceptance_criteria: "- State diagram produced and versioned; transitions and guards defined.\n- Implementation exposes current state in HMI and logs changes with RT_SAFE codes.\n- Transition timing budgets met per STK_SAFETY‑2/3 (e.g., EMERGENCY disable ≤ 1 ms).\n- Demo scenarios exercise each transition at least once."
+brief: Operating modes and state machine.
+date_updated: 2025-12-12
+dependencies:
+  - ef0865c3-b797-4f08-a179-d347c8e4af1b
+  - c3aee125-62ec-43ae-9ac0-149741d85de8
+  - 26fa25ab-c117-46fa-9cd5-a0cd10c8bcfd
+details: "Define device modes and states: BOOT (self‑tests), IDLE (enabled, stopped), RUN (closed‑loop control), WARN (non‑latching advisory), FAULT (latched until ACK+clear), EMERGENCY (latched until power‑cycle), SAFE (outputs disabled), UPDATE (A/B update), DIAGNOSTICS (read‑only). Specify transitions and guards (e.g., BOOT→IDLE on pass, RUN→FAULT on monitored condition, FAULT→IDLE on ACK+clear). Include timing budgets for transitions consistent with safety requirements."
+milestone: M1
+notes:
+  []
+priority: high
+rationale: Make behavior predictable and testable; forms the backbone of control logic and HMI.
+reference_sources:
+  - cafffa52-97f4-4aff-8cfe-d816413c9dcc
+status: proposed
+type:
+  - functional
+  - safety

@@ -1,0 +1,22 @@
+_profile: stakeholder_requirement
+_id: f7bdb67a-5e84-47bd-975a-fbf4a1bfa86e
+_label: STK_ML-4
+_parent_id: 9cac0276-f2d1-4cac-8184-075d3d023bc8
+acceptance_criteria: "- Model package schema defined; integrity verified at install and load.\n- A/B Application update path validated with model swap and rollback.\n- HMI/diagnostics report active model version consistently across device/simulation."
+brief: Model packaging, versioning, and updates (Application partition).
+date_updated: 2025-12-12
+dependencies:
+  - b77c79fc-2735-477c-a902-4440a6d3eae4
+  - 0ab1a93a-444f-4ab1-984a-d1fd4a11d51e
+  - ebf5c92d-ca29-4bf5-9bb0-4a7bac3a2798
+details: Package models with semantic version, checksum, and feature schema; distribute via Application A/B updates independent of Safety Core. HMI/diagnostics show active model version; rollback supported via Application slot switch.
+milestone: M2
+notes:
+  []
+priority: medium
+rationale: Keeps ML lifecycle separate from safety updates and preserves rollback safety.
+reference_sources:
+  - cafffa52-97f4-4aff-8cfe-d816413c9dcc
+status: proposed
+type:
+  - non-functional
