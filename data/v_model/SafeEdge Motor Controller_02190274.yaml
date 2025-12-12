@@ -1,0 +1,9 @@
+_profile: v_model
+_id: 02190274-9602-4219-a4e3-859488f14fef
+_label: SafeEdge Motor Controller
+_parent_id: ""
+client:
+  name: SafeEdge
+  project_name: SafeEdge Motor Controller
+description: Safety‑critical motor controller project delivering a standalone control and supervision unit with integrated HMI, deterministic fault handling, and controlled software update lifecycle. Includes a matching browser‑based simulation for demo and testing, alignment with certification‑ready practices, and professional documentation covering safety concept, operating states, lifecycle, and test evidence.
+version: 0
