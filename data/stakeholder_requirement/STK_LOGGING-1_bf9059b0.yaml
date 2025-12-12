@@ -4,13 +4,15 @@ _label: STK_LOGGING-1
 _parent_id: 391b757e-3605-491b-b4c1-6caf7db542b8
 acceptance_criteria: "- Log stored on filesystem in ASCII; human‑readable and tool‑parsable.\n- Capacity ≥ 1000 entries with ring buffer; rollover verified.\n- Entry schema: timestamp, severity, category, code, message.\n- Flush latency ≤ 100 ms after critical events; survives power loss.\n- Logging overhead ≤ 1% CPU average and ≤ 50 KiB RAM.\n- Endurance: simulate 1e6 writes without wear‑related failures (via mock/analysis)."
 brief: Provide persistent filesystem logging with capacity and durability guarantees.
+date_updated: 2025-12-12
 dependencies:
-  []
+  - 459ec3dc-99e6-459e-b7c5-cb9f87bcaa0a
 details: "Implement a persistent ASCII logging subsystem on the device filesystem to record boot, runtime, commands, safety, update, and HMI events. Capacity: ≥ 1000 entries with ring-buffer rollover; target storage budget ≥ 256 KiB. Each entry includes timestamp (RTC if available, else monotonic + boot counter), severity (INFO/WARN/ERROR), category, code, and message. Power‑loss safe: flushed within 100 ms; wear‑leveling respected."
 milestone: M1
 notes:
   []
 priority: high
+rationale: Persistent logs enable post‑mortem analysis, auditability, and parity with simulation, critical for support and demos.
 reference_sources:
   - cafffa52-97f4-4aff-8cfe-d816413c9dcc
 status: proposed

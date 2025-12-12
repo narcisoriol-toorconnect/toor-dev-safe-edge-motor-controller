@@ -4,13 +4,15 @@ _label: STK_UPDATES-2
 _parent_id: 6d215271-bb01-4d21-b491-f718f6dc16c9
 acceptance_criteria: "- Partition map documented; Safety Core binaries and interfaces identified.\n- Minor update path modifies only Application partition; attempts to modify Safety Core are rejected with logs.\n- Safety Core integrity CRC verified at boot and periodically; failure triggers EMERGENCY safe state.\n- Post‑update self‑tests run before enabling motion; failure prevents enable and logs reason.\n- Runtime attestation check prevents Application from bypassing Safety Core interlocks."
 brief: Protect safety-critical behavior from unintended changes across updates.
+date_updated: 2025-12-12
 dependencies:
-  []
+  - b77c79fc-2735-477c-a902-4440a6d3eae4
 details: "Partition the firmware so safety‑critical behavior remains protected across routine updates. Define two partitions: Safety Core (self‑tests, monitoring, safe‑state logic, command interlocks) and Application (HMI, non‑critical features). Policy: Safety Core is immutable for minor updates; only Application is updated routinely. Integrity: Safety Core CRC verified at boot and periodically; cross‑signature validation prevents Application from altering Safety Core behavior. Post‑update gating: device remains disabled until post‑update self‑tests pass."
 milestone: M1
 notes:
   []
 priority: high
+rationale: Isolating the safety core ensures routine updates cannot compromise safety behavior and simplifies assurance and audits.
 reference_sources:
   - cafffa52-97f4-4aff-8cfe-d816413c9dcc
 status: proposed

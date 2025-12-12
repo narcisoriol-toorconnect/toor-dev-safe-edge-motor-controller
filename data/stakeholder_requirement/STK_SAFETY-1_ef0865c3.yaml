@@ -4,6 +4,7 @@ _label: STK_SAFETY-1
 _parent_id: 74e23fd2-01c7-44e2-9d33-c48493484b39
 acceptance_criteria: "- Boot self-test completes ≤ 1 s when passing.\n- Checks performed and pass when healthy: FW CRC (ST_BOOT_01), RAM quick test (ST_BOOT_02), storage R/W+CRC (ST_BOOT_03), power-rails in-range (ST_BOOT_04), gate-driver diagnostics (ST_BOOT_05), sensors plausibility (ST_BOOT_06), encoder/Hall plausibility (ST_BOOT_07).\n- On any failure: retry up to 3 times; on persistent failure, enter safe state: PWM/drive disabled, brake engaged, motor contactor/relay open, logic remains powered, HMI message shown.\n- Persistent ASCII log on filesystem with ≥ 1000 entries, ring-buffer rollover; each entry has timestamp, severity, code, and message.\n- Motor enable is gated until all self-tests pass.\n"
 brief: Perform startup self-checks before enabling motor operation.
+date_updated: 2025-12-12
 dependencies:
   []
 details: "On power-up, perform boot self-tests and become operative within 1 s. Self-tests include: (1) firmware image CRC verification; (2) RAM quick test (<10 ms); (3) storage module sanity check (read/write+CRC); (4) power-rails in-range (logic + DC bus within spec); (5) gate-driver diagnostics (fault pins/SPI status); (6) sensors plausibility at idle (DC bus voltage, phase current, temperature); (7) encoder/Hall presence and plausibility at rest. Up to 3 retries are allowed; on persistent failure enter safe state. Results are surfaced as OK/NOT OK on the HMI and always logged to a persistent filesystem log (ASCII, ring buffer). Safe state at boot failure: disable PWM/drive, engage brake (if fitted), open motor contactor/relay while keeping logic power for HMI/logging, show \"Self-test failed\" on HMI."
@@ -12,6 +13,7 @@ notes:
   - content: Codes ST_BOOT_01..07 reserved for individual self-test failures; define exact mapping in implementation notes.
     date: 2025-12-12
 priority: high
+rationale: Ensure the device only enables motion after verifying critical subsystems, preventing unsafe activation due to latent faults and supporting safety‑aligned, demo‑ready behavior.
 reference_sources:
   - cafffa52-97f4-4aff-8cfe-d816413c9dcc
 status: proposed

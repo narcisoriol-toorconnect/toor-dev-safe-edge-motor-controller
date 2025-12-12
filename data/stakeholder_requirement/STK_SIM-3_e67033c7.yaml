@@ -4,13 +4,17 @@ _label: STK_SIM-3
 _parent_id: 12d98d6f-53be-42d9-9dfe-5d013fdbfa06
 acceptance_criteria: "- Demo scripts cover: boot, normal operation, overcurrent, undervoltage, overtemp, encoder loss, comms loss, watchdog, update+rollback, version display.\n- All flows run entirely on a developer laptop without hardware.\n- UI update rate ≥ 10 Hz; accelerated playback mode available for scenarios.\n- Parity matrix confirms behaviors match device definitions."
 brief: Enable demonstration without physical hardware.
+date_updated: 2025-12-12
 dependencies:
-  []
+  - 8d63b13f-6ee0-4d63-b08b-769253a594e3
+  - 3f381f72-ef29-4f38-a02a-d97b3b3726d3
+  - cc309043-3d59-4c30-991e-ba979cbd8e04
 details: "Enable full demonstration without hardware using the simulation. Required flows: boot with self‑tests, status display, normal run with speed changes, each fault class triggering safe state, update + rollback visualization, and version display. Performance: maintain ≥ 10 Hz UI updates; allow accelerated playback for scripted demos."
 milestone: M1
 notes:
   []
 priority: medium
+rationale: No‑hardware demos accelerate client buy‑in and allow continuous validation without lab access.
 reference_sources:
   - cafffa52-97f4-4aff-8cfe-d816413c9dcc
 status: proposed

@@ -4,6 +4,7 @@ _label: STK_LOGGING-2
 _parent_id: 391b757e-3605-491b-b4c1-6caf7db542b8
 acceptance_criteria: "- Category and code map published and committed in repo.\n- All emitted logs use a defined category+code; no uncoded events.\n- Spot‑checks across subsystems show ≥ 95% coverage of expected events.\n- Tooling can filter logs by category/code; examples provided."
 brief: Define event categories and code taxonomy for traceability.
+date_updated: 2025-12-12
 dependencies:
   []
 details: "Standardize event categories and code ranges: ST_BOOT_xx (self‑tests), RT_MON_xx (monitoring), RT_SAFE_xx (safe‑state transitions), CMD_xx (operator commands), UPD_xx (updates/rollback), HMI_xx (UI), SIM_xx (simulation). Provide a public mapping table and enforce code use in logs."
@@ -11,6 +12,7 @@ milestone: M1
 notes:
   []
 priority: medium
+rationale: A standard taxonomy makes logs filterable, automatable, and traceable across subsystems.
 reference_sources:
   - cafffa52-97f4-4aff-8cfe-d816413c9dcc
 status: proposed

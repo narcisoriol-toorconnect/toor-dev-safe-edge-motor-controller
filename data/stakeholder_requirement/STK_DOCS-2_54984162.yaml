@@ -4,13 +4,17 @@ _label: STK_DOCS-2
 _parent_id: 6768d086-b265-4768-a2af-6eb98c61d37e
 acceptance_criteria: "- Safety concept document contains hazards, assumptions, mitigations, and fault class definitions.\n- State machine diagram produced (RUN, WARN, FAULT, EMERGENCY, SAFE) with transitions and timing budgets.\n- Thresholds/latencies match STK_SAFETY‑1/2/3.\n- Traceability matrix links STK → tests and evidences; reviewed and approved."
 brief: Define safety concept, operating states, and fault handling.
+date_updated: 2025-12-12
 dependencies:
-  []
+  - ef0865c3-b797-4f08-a179-d347c8e4af1b
+  - c3aee125-62ec-43ae-9ac0-149741d85de8
+  - 26fa25ab-c117-46fa-9cd5-a0cd10c8bcfd
 details: "Document the safety concept, state machine, and fault handling with traceability. Include: hazard list (lite), fault classes, detection thresholds, safe‑state actions, timing budgets, and a state machine diagram. Provide bidirectional traceability between stakeholder requirements and tests."
 milestone: M1
 notes:
   []
 priority: high
+rationale: A documented safety concept and state model make behaviors auditable and verifiable, forming the basis for test evidence.
 reference_sources:
   - cafffa52-97f4-4aff-8cfe-d816413c9dcc
 status: proposed

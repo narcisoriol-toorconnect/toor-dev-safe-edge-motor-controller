@@ -4,6 +4,7 @@ _label: STK_SAFETY-2
 _parent_id: 74e23fd2-01c7-44e2-9d33-c48493484b39
 acceptance_criteria: "- Sampling rates implemented as specified (10 kHz/1 kHz/100 Hz/10 Hz).\n- Thresholds, hysteresis, debounce, and latency targets met in tests with injected conditions.\n- Fault classification and latching behavior implemented as defined (WARN non‑latched; FAULT latched until ACK+clear; EMERGENCY requires power‑cycle/privil. reset).\n- Overcurrent detected and acted ≤ 1 ms; undervoltage ≤ 20 ms; overspeed ≤ 50 ms; overtemp ≤ 250 ms; encoder loss ≤ 20 ms.\n- Persistent ASCII logs on filesystem record each event with timestamp, severity, RT_MON code, and message.\n- Config interface exists to tune thresholds per deployment; defaults as listed."
 brief: Monitor critical runtime conditions and detect faults deterministically.
+date_updated: 2025-12-12
 dependencies:
   []
 details: "Continuously monitor safety‑critical parameters with deterministic detection and action. Parameters, sampling, and default thresholds (tunable per deployment):\n- DC bus voltage [V] @ 1 kHz: WARN < 40 or > 60 for >100 ms; FAULT < 36 or > 65 for >20 ms; hysteresis 2 V.\n- Phase/arm current [A] @ 10 kHz (HW comp) + 1 kHz (SW): WARN > 0.8·Imax for >100 ms; FAULT > 1.0·Imax for >10 ms; EMERGENCY > 1.5·Imax immediate; Imax default 30 A.\n- Heatsink temperature [°C] @ 100 Hz: WARN > 85 for >1 s; FAULT > 95 for >200 ms; EMERGENCY > 105 immediate; hysteresis 5 °C.\n- Speed/RPM @ 100 Hz: WARN > 1.10·rated for >200 ms; FAULT > 1.20·rated for >100 ms; EMERGENCY > 1.30·rated immediate.\n- 3V3/5V rails @ 1 kHz: WARN ±5% for >50 ms; FAULT ±10% for >10 ms.\n- Encoder/Hall presence/plausibility @ 1 kHz: loss‑of‑signal > 50 ms → FAULT; index mismatch or invalid sequence → FAULT (latched) until clear.\n- Watchdog supervision @ 100 Hz: WDT expiry → EMERGENCY.\n- Comms/HMI heartbeat @ 10 Hz: loss > 5 s → WARN.\nFault classes: WARN (non‑latching), FAULT (latched until operator ACK and condition clears), EMERGENCY (latched; requires power‑cycle or privileged reset). All events logged persistently (ASCII) with codes RT_MON_xx.\nDetection latency targets: overcurrent ≤ 1 ms (HW), undervoltage ≤ 20 ms, overspeed ≤ 50 ms, overtemp ≤ 250 ms, encoder loss ≤ 20 ms."
@@ -12,6 +13,7 @@ notes:
   - content: "RT_MON_01..99 reserved: 01 overcurrent, 02 undervoltage, 03 overvoltage, 04 overtemp, 05 overspeed, 06 encoder loss, 07 rail out‑of‑range, 08 WDT expiry, 09 comms heartbeat lost; final mapping to be documented."
     date: 2025-12-12
 priority: high
+rationale: Continuous monitoring with deterministic thresholds is essential to detect hazards early, act within bounded latency, and provide measurable, testable safety behavior.
 reference_sources:
   - cafffa52-97f4-4aff-8cfe-d816413c9dcc
 status: proposed

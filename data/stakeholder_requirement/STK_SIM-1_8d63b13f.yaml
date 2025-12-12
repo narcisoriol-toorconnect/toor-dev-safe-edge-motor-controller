@@ -4,6 +4,7 @@ _label: STK_SIM-1
 _parent_id: 12d98d6f-53be-42d9-9dfe-5d013fdbfa06
 acceptance_criteria: "- HMI runs on Chrome/Edge (last 2 versions) and adapts to 1280×720 and 1920×1080.\n- Real‑time updates ≥ 10 Hz; latency ≤ 200 ms from simulated state to UI.\n- Views, labels, and command set match hardware HMI per parity matrix.\n- Works offline for static content; connects to local simulation engine for live data."
 brief: Provide a browser-based simulation HMI mirroring the device.
+date_updated: 2025-12-12
 dependencies:
   []
 details: "Provide a browser‑based HMI mirroring device behavior for demos. Targets: latest Chrome/Edge (last 2 versions), 1280×720 and 1920×1080 layouts, offline capability (static assets). Data model parity with device; connect to local simulation engine via WebSocket for real‑time updates ≥ 10 Hz."
@@ -11,6 +12,7 @@ milestone: M1
 notes:
   []
 priority: medium
+rationale: A browser‑based HMI expands access, accelerates validation, and enables demos without special hardware.
 reference_sources:
   - cafffa52-97f4-4aff-8cfe-d816413c9dcc
 status: proposed

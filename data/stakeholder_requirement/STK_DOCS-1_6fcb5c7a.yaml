@@ -4,13 +4,16 @@ _label: STK_DOCS-1
 _parent_id: 6768d086-b265-4768-a2af-6eb98c61d37e
 acceptance_criteria: "- Docs include architecture overview, component roles, interfaces, and state/mode definitions.\n- Built artifacts: HTML and PDF generated from Markdown via tooling.\n- Versioned in repo; CI verifies build succeeds and cross‑links resolve.\n- Reviews completed; discrepancies with implementation tracked and resolved."
 brief: Provide system overview and functional description.
+date_updated: 2025-12-12
 dependencies:
-  []
+  - 12537c56-c0ee-4253-980b-84cfea4b23aa
+  - b77c79fc-2735-477c-a902-4440a6d3eae4
 details: "Deliver documentation suitable for client and internal review. Provide: System Overview (architecture, components, interfaces) and Functional Description (states, modes, HMI). Source format Markdown rendered to HTML/PDF; maintained in repo with versioning. Keep docs consistent with implementation via periodic checks."
 milestone: M1
 notes:
   []
 priority: medium
+rationale: Clear, versioned documentation aligns expectations, speeds onboarding, and reduces rework.
 reference_sources:
   - cafffa52-97f4-4aff-8cfe-d816413c9dcc
 status: proposed

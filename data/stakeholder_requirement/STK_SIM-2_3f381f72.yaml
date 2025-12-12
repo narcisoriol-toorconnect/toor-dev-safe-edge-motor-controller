@@ -4,13 +4,16 @@ _label: STK_SIM-2
 _parent_id: 12d98d6f-53be-42d9-9dfe-5d013fdbfa06
 acceptance_criteria: "- UI exposes toggles for each fault; scenario runner loads YAML and plays sequences.\n- Each injected fault produces the same class/action as hardware targets.\n- Metrics recorded with timestamps and exported to CSV/JSON.\n- At least 10 reference scenarios provided (startup, normal run, each fault class, update/rollback demonstration)."
 brief: Support fault injection and scenario demonstration in simulation.
+date_updated: 2025-12-12
 dependencies:
-  []
+  - c3aee125-62ec-43ae-9ac0-149741d85de8
+  - 26fa25ab-c117-46fa-9cd5-a0cd10c8bcfd
 details: "Offer fault injection and scripted scenarios in the simulation to validate safety behavior. Fault catalog: overcurrent, undervoltage, overtemp, encoder loss, comms loss, watchdog expiry. Injection methods: UI toggles and YAML scenario scripts (timelines and triggers). Metrics captured: timestamps, state transitions, fault codes, and HMI messages; exported as CSV/JSON."
 milestone: M1
 notes:
   []
 priority: medium
+rationale: Fault injection provides fast, repeatable evidence that safety responses work as intended, reducing lab time.
 reference_sources:
   - cafffa52-97f4-4aff-8cfe-d816413c9dcc
 status: proposed
