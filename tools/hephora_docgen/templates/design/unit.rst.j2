@@ -1,0 +1,155 @@
+.. _unit-{{ unit_slug }}:
+
+{{ title }}
+{{ '=' * title|length }}
+
+{% if description %}
+{{ description }}
+{% endif %}
+
+Components Referenced
+---------------------
+{% if components_refs and components_refs|length > 0 %}
+- {% for c in components_refs %}:doc:`{{ c.label }} <{{ c.doc_path }}>`{% if not loop.last %}, {% endif %}{% endfor %}
+{% else %}
+- None
+{% endif %}
+
+Interfaces Provided
+-------------------
+{% if provided_interfaces and provided_interfaces|length > 0 %}
+- {% for i in provided_interfaces %}:doc:`{{ i.label }} <{{ i.doc_path }}>`{% if not loop.last %}, {% endif %}{% endfor %}
+{% else %}
+- None
+{% endif %}
+
+Attributes
+----------
+{% if attributes and attributes|length > 0 %}
+.. list-table:: Attributes
+   :header-rows: 1
+
+   * - Scope
+     - Data Type
+     - Name
+     - Description
+{% for a in attributes %}
+   * - {{ a.scope or '-' }}
+     - {{ (a.data_type_display | safe) if a.data_type_display else (a.data_type or '-') }}
+     - {{ a.label or '-' }}
+     - {{ a.description or '-' }}
+{% endfor %}
+{% else %}
+- None
+{% endif %}
+
+Methods
+-------
+{% if methods and methods|length > 0 %}
+.. list-table:: Methods
+   :header-rows: 1
+
+   * - Scope
+     - Name
+     - Parameters
+     - Return
+     - Description
+{% for m in methods %}
+   * - {{ m.scope or '-' }}
+     - {{ m.label or '-' }}
+     - {% if m.parameters and m.parameters|length > 0 %}{% for p in m.parameters %}{{ p.name }} ({{ (p.data_type_display | safe) if p.data_type_display else (p.data_type or p.unit_ref or '') }}){% if not loop.last %}, {% endif %}{% endfor %}{% else %}-{% endif %}
+     - {% if m.return %}{{ (m.return.data_type_display | safe) if m.return.data_type_display else (m.return.data_type or m.return.unit_ref or '') }}{% if m.return.description %} - {{ m.return.description.split('\n')[0] }}{% endif %}{% else %}-{% endif %}
+     - {{ (m.description or '').split('\n')[0] if m.description else '-' }}
+{% endfor %}
+{% else %}
+- None
+{% endif %}
+
+Data Types
+----------
+{% if data_types and data_types|length > 0 %}
+{% for dt in data_types %}
+.. _dt-{{ unit_slug }}-{{ dt.slug }}:
+
+**{{ dt.label or '-' }}** — Kind: {{ dt.kind or '-' }}{% if dt.alias_of %} (alias of {{ dt.alias_of }}){% endif %}
+
+{% if dt.description %}{{ dt.description }}{% endif %}
+
+{% if dt.fields and dt.fields|length > 0 %}
+.. list-table:: Fields
+   :header-rows: 1
+
+   * - Name
+     - Data Type
+{% for f in dt.fields %}
+   * - {{ f.name or '-' }}
+     - {{ (f.data_type_display | safe) if f.data_type_display else (f.data_type or f.unit_ref or '-') }}
+{% endfor %}
+{% endif %}
+
+{% if dt.enum_values and dt.enum_values|length > 0 %}
+.. list-table:: Enum Values
+   :header-rows: 1
+
+   * - Name
+     - Value
+     - Description
+{% for ev in dt.enum_values %}
+   * - {{ ev.name or '-' }}
+     - {{ ev.value or '-' }}
+     - {{ ev.description or '-' }}
+{% endfor %}
+{% endif %}
+
+{% if dt.function_pointer_parameters and dt.function_pointer_parameters|length > 0 %}
+Function Pointer Parameters:
+
+.. list-table:: Parameters
+   :header-rows: 1
+
+   * - Name
+     - Data Type
+     - Direction
+     - Multiplicity
+     - Description
+{% for fp in dt.function_pointer_parameters %}
+   * - {{ fp.name or '-' }}
+     - {{ fp.data_type or '-' }}
+     - {{ fp.direction or '-' }}
+     - {{ fp.multiplicity or '-' }}
+     - {{ fp.description or '-' }}
+{% endfor %}
+{% endif %}
+
+{% if dt.function_pointer_return %}
+Function Pointer Return:
+
+- Data Type: {{ dt.function_pointer_return.data_type or '-' }}
+- Description: {{ dt.function_pointer_return.description or '-' }}
+{% endif %}
+
+----
+{% endfor %}
+{% else %}
+- None
+{% endif %}
+
+Attachments
+-----------
+{% if attachments and attachments|length > 0 %}
+{% for a in attachments %}
+{% if a.is_image %}
+.. figure:: {{ a.doc_path }}
+   :alt: {{ a.description or a.filename }}
+   :align: center
+   :figwidth: 80%
+
+   {{ a.description or a.filename }}
+
+{% else %}
+* {{ a.description or a.filename }} (file: ``{{ a.doc_path }}``)
+{% endif %}
+{% endfor %}
+{% else %}
+- None
+{% endif %}

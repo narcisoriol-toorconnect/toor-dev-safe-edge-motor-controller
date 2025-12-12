@@ -1,0 +1,38 @@
+name: attachment
+kind: node
+description: Defines a file attachment
+meta:
+  alias: Attachment
+  icon: link
+
+fields:
+  filepath:
+    type: string
+    required: false
+    description: Path to the attachment file
+    meta:
+      alias: File Path
+      format:
+        type: filePicker
+        directories: false
+
+  description:
+    type: string
+    required: false
+    description: Description of the attachment
+    meta:
+      alias: Description
+    
+  date_updated:
+    type: string
+    required: false
+    description: Date when the attachment was last updated
+    meta:
+      alias: Date Updated
+
+  version:
+    type: string
+    required: false
+    description: Version of the attachment
+    meta:
+      alias: Version

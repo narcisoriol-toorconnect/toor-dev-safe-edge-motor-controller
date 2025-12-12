@@ -1,0 +1,56 @@
+name: sw_architecture
+kind: node
+description: Represents a software architecture
+meta:
+  alias: Software Architecture
+
+fields:
+  description:
+    type: string
+    required: false
+    description: Description of the software architecture
+    meta:
+      alias: Description
+      icon: symbol-misc
+      format:
+        type: editor
+        file: md
+
+  architectural_decisions:
+    type: string
+    required: false
+    description: Key architectural decisions made in this architecture
+    meta:
+      alias: Architectural Decisions (ADRs)
+      format:
+        type: editor
+        file: md
+
+  status:
+    type: enum
+    values: [draft, proposed, approved, rejected]
+    required: false
+    description: Current status of the software architecture
+    meta:
+      alias: Status
+
+  attachments:
+    type: array
+    items:
+      type: reference
+      target: attachment
+    description: Attachments related to this software architecture
+    required: false
+    meta:
+      alias: Attachments
+
+children:
+  components:
+    node: sw_component
+    description: List of software components in this architecture
+  interfaces:
+    node: sw_interface
+    description: List of software interfaces in this architecture
+  data_structures:
+    node: sw_data_structure
+    description: List of software data structures in this architecture

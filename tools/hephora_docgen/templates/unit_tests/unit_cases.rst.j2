@@ -1,0 +1,24 @@
+{{ title }}
+{{ '=' * title|length }}
+
+{% if rows and rows|length > 0 %}
+.. list-table:: Test Cases by Plan
+   :header-rows: 1
+
+   * - Plan
+     - Test Case
+     - Preconditions
+     - Steps
+     - Expected Result
+     - Status
+{% for row in rows %}
+   * - :doc:`{{ row.plan_label }} <{{ row.plan_doc_path }}>`
+     - {{ row.tc.label or '-' }}
+     - {{ (row.tc.preconditions | join('; ')) if row.tc.preconditions else '-' }}
+     - {{ (row.tc.steps | join('; ')) if row.tc.steps else '-' }}
+     - {{ (row.tc.expected_result or '').split('\n')[0] if row.tc.expected_result else '-' }}
+     - {{ row.tc.status or '-' }}
+{% endfor %}
+{% else %}
+- None
+{% endif %}

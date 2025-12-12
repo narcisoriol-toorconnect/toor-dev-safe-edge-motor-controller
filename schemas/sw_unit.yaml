@@ -1,0 +1,54 @@
+name: sw_unit
+kind: node
+description: Represents a software unit
+meta:
+  alias: Software Unit
+  icon: symbol-package
+
+fields:
+  description:
+    type: string
+    required: false
+    description: Description of the software unit
+    meta:
+      alias: Description
+      format:
+        type: editor
+        file: md
+
+  sw_component_refs:
+    type: array
+    items:
+      type: reference
+      target: sw_component
+    description: References to software components associated with this unit
+    required: false
+    meta:
+      alias: Software Component References
+  
+  interfaces_provided:
+    type: array
+    items:
+      type: reference
+      target: sw_interface
+    description: Architectural interfaces that this unit provides/implements in design
+    required: false
+    meta:
+      alias: Interfaces Provided
+  
+children:
+  sw_unit_data_types:
+    node: sw_unit_data_type
+    description: List of design-level software unit data types defined in this unit
+  attachments:
+    node: attachment
+    description: List of attachments related to this software unit
+  methods:
+    node: sw_unit_method
+    description: List of methods defined in this software unit
+  relationships:
+    node: sw_unit_relationship
+    description: List of relations from this software unit
+  attributes:
+    node: sw_unit_attribute
+    description: List of software unit attributes

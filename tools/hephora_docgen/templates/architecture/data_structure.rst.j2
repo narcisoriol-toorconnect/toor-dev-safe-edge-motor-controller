@@ -1,0 +1,22 @@
+{{ title }}
+{{ '=' * title|length }}
+
+{% if description %}
+{{ description }}
+{% endif %}
+
+Fields
+------
+{% if fields and fields|length > 0 %}
+.. list-table:: Fields
+   :header-rows: 1
+
+   * - Name
+     - Data Type
+{% for f in fields %}
+   * - {{ f.name or '-' }}
+     - {{ f.data_type or '-' }}
+{% endfor %}
+{% else %}
+- None
+{% endif %}

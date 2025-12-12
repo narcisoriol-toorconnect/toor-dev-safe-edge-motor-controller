@@ -1,0 +1,25 @@
+name: stakeholder_requirements_group
+kind: node
+description: Represents a group of stakeholder requirements involved in the project
+meta:
+  alias: Stakeholder Requirements Group
+  icon: book
+
+fields:
+  description:
+    type: string
+    required: false
+    description: Description of the stakeholder group
+    meta:
+      alias: Description
+
+  internal_requirements_count:
+    type: integer
+    required: false
+    description: Number of internal requirements in this group (used by auto labeling script, DO NOT EDIT MANUALLY)
+    alias: Internal Requirements Count
+
+children:
+  stakeholder_requirements:
+    node: stakeholder_requirement
+    description: List of stakeholder requirements in this group

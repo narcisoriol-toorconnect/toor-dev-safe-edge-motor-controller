@@ -1,0 +1,30 @@
+{{ label }}
+{{ '=' * label|length }}
+
+{% if brief %}
+Summary
+-------
+
+{{ brief }}
+{% endif %}
+
+{% if details %}
+Details
+-------
+
+{{ details }}
+{% endif %}
+
+{% if rationale %}
+Rationale
+---------
+
+{{ rationale }}
+{% endif %}
+
+{% if acceptance_criteria %}
+Acceptance Criteria
+-------------------
+
+{{ acceptance_criteria }}
+{% endif %}

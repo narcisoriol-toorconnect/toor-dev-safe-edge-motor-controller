@@ -1,0 +1,41 @@
+{{ title }}
+{{ '=' * title|length }}
+
+{% if description %}
+{{ description }}
+{% endif %}
+
+Units Overview
+--------------
+
+Units
+-----
+
+{% for u in units %}
+* :doc:`{{ u.label }} <{{ u.doc_path }}>` — {{ (u.description or '').splitlines()[0] if u.description else '' }}
+{% endfor %}
+
+.. toctree::
+   :maxdepth: 1
+
+{% for u in units %}
+   {{ u.doc_path }}
+{% endfor %}
+
+{% if attachments and attachments|length > 0 %}
+Attachments
+-----------
+{% for a in attachments %}
+{% if a.is_image %}
+.. figure:: {{ a.doc_path }}
+   :alt: {{ a.description or a.filename }}
+   :align: center
+   :figwidth: 80%
+
+   {{ a.description or a.filename }}
+
+{% else %}
+* {{ a.description or a.filename }} (file: ``{{ a.doc_path }}``)
+{% endif %}
+{% endfor %}
+{% endif %}

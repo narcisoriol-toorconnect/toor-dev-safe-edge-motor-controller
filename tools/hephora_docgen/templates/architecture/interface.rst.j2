@@ -1,0 +1,45 @@
+{{ title }}
+{{ '=' * title|length }}
+
+{% if description %}
+{{ description }}
+{% endif %}
+
+Overview
+--------
+
+- Direction: {{ direction or '-' }}
+- Communication Mode: {{ mode or '-' }}
+- Communication Type: {{ comm_type or '-' }}
+
+Provided By
+-----------
+{% if provided_by and provided_by|length > 0 %}
+- {% for c in provided_by %}:doc:`{{ c.label }} <{{ c.doc_path }}>`{% if not loop.last %}, {% endif %}{% endfor %}
+{% else %}
+- None
+{% endif %}
+
+Required By
+-----------
+{% if required_by and required_by|length > 0 %}
+- {% for c in required_by %}:doc:`{{ c.label }} <{{ c.doc_path }}>`{% if not loop.last %}, {% endif %}{% endfor %}
+{% else %}
+- None
+{% endif %}
+
+Data Structures
+---------------
+{% if data_structures and data_structures|length > 0 %}
+- {% for d in data_structures %}:doc:`{{ d.label }} <{{ d.doc_path }}>`{% if not loop.last %}, {% endif %}{% endfor %}
+{% else %}
+- None
+{% endif %}
+
+Requirements
+------------
+{% if requirements and requirements|length > 0 %}
+- {% for r in requirements %}:doc:`{{ r.label }} <{{ r.doc_path }}>`{% if not loop.last %}, {% endif %}{% endfor %}
+{% else %}
+- None
+{% endif %}

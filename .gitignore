@@ -1,0 +1,5 @@
+.hephora/
+.venv/
+__pycache__/
+tools/hephora_docgen/docs
+out/

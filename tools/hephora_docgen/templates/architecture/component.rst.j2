@@ -1,0 +1,66 @@
+{{ title }}
+{{ '=' * title|length }}
+
+{% if description %}
+{{ description }}
+{% endif %}
+
+Requirements
+------------
+{% if requirements and requirements|length > 0 %}
+- {% for r in requirements %}:doc:`{{ r.label }} <{{ r.doc_path }}>`{% if not loop.last %}, {% endif %}{% endfor %}
+{% else %}
+- None
+{% endif %}
+
+Interfaces Provided
+-------------------
+{% if provided_interfaces and provided_interfaces|length > 0 %}
+.. list-table:: Provided Interfaces
+   :header-rows: 1
+
+   * - Interface
+     - Direction
+     - Mode
+     - Type
+     - Data Structures
+{% for i in provided_interfaces %}
+   * - :doc:`{{ i.label }} <{{ i.doc_path }}>`
+     - {{ i.direction or '-' }}
+     - {{ i.mode or '-' }}
+     - {{ i.comm_type or '-' }}
+     - {% if i.data_structures and i.data_structures|length > 0 %}{% for d in i.data_structures %}:doc:`{{ d.label }} <{{ d.doc_path }}>`{% if not loop.last %}, {% endif %}{% endfor %}{% else %}-{% endif %}
+{% endfor %}
+{% else %}
+- None
+{% endif %}
+
+Interfaces Required
+-------------------
+{% if required_interfaces and required_interfaces|length > 0 %}
+.. list-table:: Required Interfaces
+   :header-rows: 1
+
+   * - Interface
+     - Direction
+     - Mode
+     - Type
+     - Data Structures
+{% for i in required_interfaces %}
+   * - :doc:`{{ i.label }} <{{ i.doc_path }}>`
+     - {{ i.direction or '-' }}
+     - {{ i.mode or '-' }}
+     - {{ i.comm_type or '-' }}
+     - {% if i.data_structures and i.data_structures|length > 0 %}{% for d in i.data_structures %}:doc:`{{ d.label }} <{{ d.doc_path }}>`{% if not loop.last %}, {% endif %}{% endfor %}{% else %}-{% endif %}
+{% endfor %}
+{% else %}
+- None
+{% endif %}
+
+Data Structures
+---------------
+{% if data_structures and data_structures|length > 0 %}
+- {% for d in data_structures %}:doc:`{{ d.label }} <{{ d.doc_path }}>`{% if not loop.last %}, {% endif %}{% endfor %}
+{% else %}
+- None
+{% endif %}

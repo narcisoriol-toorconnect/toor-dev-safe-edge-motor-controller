@@ -1,0 +1,23 @@
+@startuml
+
+{% for c in components %}
+component "{{c.label}}" as {{c.id.replace("-", "_")}}
+{% endfor %}
+
+{% for i in interfaces %}
+interface "{{i.label}}" as {{i.id.replace("-", "_")}}
+{% endfor %}
+
+{% for i in interfaces %}
+{% for prov in i.provided_by %}
+{{prov.replace("-", "_")}} -- {{i.id.replace("-", "_")}}
+{% endfor %}
+{% endfor %}
+
+{% for i in interfaces %}
+{% for req in i.required_by %}
+{{req.replace("-", "_")}} --( {{i.id.replace("-", "_")}}
+{% endfor %}
+{% endfor %}
+
+@enduml

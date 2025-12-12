@@ -1,0 +1,40 @@
+name: sw_unit_relationship
+kind: node
+description: Represents a software unit relationship
+meta:
+  alias: Software Unit Relationship
+  icon: arrow-both
+  
+fields:
+  type:
+    type: enum
+    values: [dependency, association, aggregation, composition, realization, generalization]
+    required: false
+    description: Type of relationship
+    meta:
+      alias: Relationship Type
+  target:
+    type: reference
+    target: sw_unit
+    required: false
+    description: Target software unit of the relationship
+    meta:
+      alias: Target Software Unit
+  source_multiplicity:
+    type: string
+    required: false
+    description: Multiplicity at the source end (e.g., 1, 0..*, 1..*)
+    meta:
+      alias: Source Multiplicity
+  target_multiplicity:
+    type: string
+    required: false
+    description: Multiplicity at the target end (e.g., 1, 0..*, 1..*)
+    meta:
+      alias: Target Multiplicity
+  description:
+    type: string
+    required: false
+    description: Description of the relationship
+    meta:
+      alias: Relationship Description

@@ -1,0 +1,43 @@
+{{ title }}
+{{ '=' * title|length }}
+
+{% if unit %}Unit: :doc:`{{ unit.label }} <{{ unit.doc_path }}>`{% endif %}
+
+{% if description %}
+
+{{ description }}
+{% endif %}
+
+Test Cases
+----------
+{% if test_cases and test_cases|length > 0 %}
+{% for tc in test_cases %}- :doc:`{{ tc.label }} <{{ tc.doc_path }}>` — Status: {{ tc.status or 'Not Tested' }}
+{% endfor %}
+
+.. toctree::
+   :maxdepth: 1
+   :hidden:
+
+{% for tc in test_cases %}   {{ tc.doc_path }}
+{% endfor %}
+{% else %}
+- None
+{% endif %}
+
+{% if evidences and evidences|length > 0 %}
+Evidences
+---------
+{% for a in evidences %}
+{% if a.is_image %}
+.. figure:: {{ a.doc_path }}
+   :alt: {{ a.description or a.filename }}
+   :align: center
+   :figwidth: 80%
+
+   {{ a.description or a.filename }}
+
+{% else %}
+* {{ a.description or a.filename }} (file: ``{{ a.doc_path }}``)
+{% endif %}
+{% endfor %}
+{% endif %}

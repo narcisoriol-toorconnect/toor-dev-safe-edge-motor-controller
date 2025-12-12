@@ -1,0 +1,29 @@
+{{ title }}
+{{ '=' * title|length }}
+
+{% if status %}Status: {{ status }}{% endif %}
+
+{% if description %}
+
+{{ description }}
+{% endif %}
+
+{% if preconditions and preconditions|length > 0 %}
+Preconditions
+-------------
+- {% for p in preconditions %}{{ p }}{% if not loop.last %}
+- {% endif %}{% endfor %}
+{% endif %}
+
+{% if steps and steps|length > 0 %}
+Steps
+-----
+- {% for s in steps %}{{ s }}{% if not loop.last %}
+- {% endif %}{% endfor %}
+{% endif %}
+
+{% if expected_result %}
+Expected Result
+---------------
+{{ expected_result }}
+{% endif %}

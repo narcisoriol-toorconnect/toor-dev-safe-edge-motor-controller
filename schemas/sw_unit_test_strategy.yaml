@@ -1,0 +1,33 @@
+name: sw_unit_test_strategy
+kind: node
+description: Represents a test strategy
+meta:
+  alias: Test Strategy
+  icon: archive
+
+fields:
+  description:
+    type: string
+    required: false
+    description: Description of the test strategy
+    meta:
+      alias: Description
+  tools:
+    type: array
+    items:
+      type: string
+    required: false
+    description: List of tools used in the testing process
+    meta:
+      alias: Tools
+  environment:
+    type: string
+    required: false
+    description: Description of the testing environment
+    meta:
+      alias: Environment
+
+children:
+  test_plans:
+    node: sw_unit_test_plan
+    description: List of test plans associated with this strategy

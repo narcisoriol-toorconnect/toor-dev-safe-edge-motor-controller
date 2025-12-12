@@ -1,0 +1,70 @@
+name: v_model
+kind: root
+description: V-Model project profile
+meta:
+  alias: V-Model Project
+  icon: symbol-function
+
+fields:
+  version:
+    type: string
+    required: false
+    description: Version of the project
+    meta:
+      alias: Version
+  
+  description:
+    type: string
+    required: false
+    description: Description of the project
+    meta:
+      alias: Description
+      format:
+        type: editor
+        file: md
+
+  client:
+    type: object
+    fields:
+      name:
+        type: string
+        required: false
+        description: Name of the client
+        meta:
+          alias: Name
+      project_name:
+        type: string
+        required: false
+        description: Name of the project
+        meta:
+          alias: Project Name
+    required: false
+    description: Information about the client
+    meta:
+      alias: Client
+
+children:
+  stakeholder_requirements_groups:
+    node: stakeholder_requirements_group
+    description: List of stakeholder requirements groups involved in the project
+  sw_requirements_groups:
+    node: sw_requirements_group
+    description: List of software requirements groups in the project
+  sw_architectures:
+    node: sw_architecture
+    description: List of software architectures in the project
+  sw_design:
+    node: sw_design
+    description: Singleton software design in the project
+  sw_unit_test_strategy:
+    node: sw_unit_test_strategy
+    description: Singleton software unit test strategy in the project
+  sw_integration_test_strategy:
+    node: sw_integration_test_strategy
+    description: Singleton software integration test strategy in the project
+  sw_qualification_test_strategy:
+    node: sw_qualification_test_strategy
+    description: Singleton software qualification test strategy in the project
+  attachments:
+    node: attachment
+    description: List of attachments directly associated with this project

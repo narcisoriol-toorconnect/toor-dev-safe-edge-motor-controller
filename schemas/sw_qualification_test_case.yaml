@@ -1,0 +1,57 @@
+name: sw_qualification_test_case
+kind: node
+description: Represents a test case
+meta:
+  alias: Test Case
+  icon: beaker
+
+fields:
+  sw_requirements:
+    type: array
+    items:
+      type: reference
+      target: sw_requirement
+    required: false
+    description: Software requirements covered by this qualification test plan
+    meta:
+      alias: Software Requirements
+
+  description:
+    type: string
+    required: false
+    description: Description of the test case
+    meta:
+      alias: Description
+
+  preconditions:
+    type: array
+    items:
+      type: string
+    required: false
+    description: Preconditions that must be met before executing the test case
+    meta:
+      alias: Preconditions
+
+  steps:
+    type: array
+    items:
+      type: string
+    required: false
+    description: Steps to be followed in the test case
+    meta:
+      alias: Steps
+  
+  expected_result:
+    type: string
+    required: false
+    description: Expected result of the test case
+    meta:
+      alias: Expected Result
+
+  status:
+    type: enum
+    values: [Not Tested, Passed, Failed]
+    required: false
+    description: Current status of the test case
+    meta:
+      alias: Status

@@ -1,0 +1,31 @@
+{{ group_label }}
+{{ '=' * group_label|length }}
+
+{% if description %}
+{{ description }}
+
+{% endif %}
+Requirements
+------------
+
+{% if requirements and requirements|length > 0 %}
+.. list-table:: Requirements
+   :header-rows: 1
+
+   * - Requirement
+     - Brief
+{% for r in requirements %}
+   * - :doc:`{{ r.label }} <../items/{{ r.slug }}>`
+     - {{ r.brief or '' }}
+{% endfor %}
+{% else %}
+No requirements in this group.
+{% endif %}
+
+.. toctree::
+   :maxdepth: 1
+   :hidden:
+
+{% for r in requirements %}
+   ../items/{{ r.slug }}
+{% endfor %}

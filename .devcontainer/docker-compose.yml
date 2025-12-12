@@ -1,0 +1,39 @@
+services:
+  vscode:
+    container_name: toor-dev-demo-project-vscode
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ..:/workspace
+      - /var/run/docker.sock:/var/run/docker.sock
+    working_dir: /workspace
+    command: sleep infinity
+    environment:
+      HEPHORA_API_URL: "http://http_server:8080"
+      MARKITDOWN_MCP_URL: "http://markitdown_mcp:3001/mcp"
+    depends_on:
+      - http_server
+    networks:
+      - devnet
+
+  http_server:
+    container_name: toor-dev-demo-project-http-server
+    build:
+      context: .
+      dockerfile: Dockerfile
+    working_dir: /app
+    volumes:
+      - .:/app
+    command: ./http_server
+    expose:
+      - "8080"
+    ports:
+      - "8080:8080"
+    networks:
+      - devnet
+
+# Shared network so all containers can talk via hostname
+networks:
+  devnet:
+    name: toorconnect_network

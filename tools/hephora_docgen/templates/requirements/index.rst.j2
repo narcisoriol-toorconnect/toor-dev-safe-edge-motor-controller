@@ -1,0 +1,19 @@
+Software Requirements
+=====================
+
+.. list-table:: Groups Overview
+   :header-rows: 1
+
+   * - Group Label
+     - Description
+{% for g in groups %}
+   * - :doc:`{{ g.label }} <{{ g.doc_path }}>`
+     - {{ g.description or '' }}
+{% endfor %}
+
+.. toctree::
+   :maxdepth: 1
+   
+{% for g in groups %}
+   {{ g.doc_path }}
+{% endfor %}

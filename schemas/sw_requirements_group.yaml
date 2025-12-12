@@ -1,0 +1,26 @@
+name: sw_requirements_group
+kind: node
+description: Represents a group of software Requirements
+meta:
+  alias: Software Requirements Group
+  icon: book
+
+fields:
+  description:
+    type: string
+    required: false
+    description: Description of the software requirements group
+    meta:
+      alias: Description
+
+  requirements_count:
+    type: integer
+    required: false
+    description: Number of software requirements in this group (Read-only, this is increased automatically when requirements are added from lua scripts)
+    meta:
+      alias: Requirements Count
+
+children:
+  sw_requirements:
+    node: sw_requirement
+    description: List of software requirements in this group

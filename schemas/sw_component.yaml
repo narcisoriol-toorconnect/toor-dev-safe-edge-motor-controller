@@ -1,0 +1,39 @@
+name: sw_component
+kind: node
+description: Represents a software component
+meta:
+  alias: Software Component
+
+fields:
+  description:
+    type: string
+    required: false
+    description: Description of the software component
+    meta:
+      alias: Description
+      icon: package
+      format:
+        type: block
+
+  sw_requirements:
+    type: array
+    items:
+      type: reference
+      target: sw_requirement
+    description: Software requirements fulfilled by this component
+    required: false
+    meta:
+      alias: Software Requirements
+
+  parent_reference:
+    type: reference
+    target: sw_component
+    description: Parent software component in a hierarchical structure
+    required: false
+    meta:
+      alias: Parent Component
+
+children:
+  attachments:
+    node: attachment
+    description: List of attachments related to this component

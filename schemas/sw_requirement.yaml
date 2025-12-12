@@ -1,0 +1,61 @@
+name: sw_requirement
+kind: node
+description: Represents a single software requirement
+meta:
+  alias: Software Requirement
+  icon: bookmark
+
+fields:
+  brief:
+    type: string
+    required: false
+    description: A brief summary of the software requirement
+    meta:
+      alias: Brief
+
+  details:
+    type: string
+    required: false
+    description: Detailed description of the software requirement
+    meta:
+      alias: Details
+
+  rationale:
+    type: string
+    required: false
+    description: Rationale behind the software requirement
+    meta:
+      alias: Rationale
+
+  acceptance_criteria:
+    type: string
+    required: false
+    description: Acceptance criteria for the software requirement
+    meta:
+      alias: Acceptance Criteria
+
+  attachments:
+    type: array
+    items:
+      type: reference
+      target: attachment
+    description: Attachments related to this software requirement
+    required: false
+    meta:
+      alias: Attachments
+
+  stakeholder_ref:
+    type: array
+    items:
+      type: reference
+      target: stakeholder_requirement
+    description: References to the originating stakeholder requirements
+    required: false
+    meta:
+      alias: Stakeholder Requirement References
+
+commands:
+  auto_labeling:
+    description: Automatically label the software requirement based on its group and update the group's requirements count
+    script: sw_requirements_auto_labeling.lua
+    trigger:  on_create

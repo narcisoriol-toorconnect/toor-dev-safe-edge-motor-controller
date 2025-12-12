@@ -1,0 +1,34 @@
+name: sw_unit_attribute
+kind: node
+description: Represents a software unit attribute
+meta:
+  alias: Software Unit Attribute
+  icon: symbol-field
+
+fields:
+  description:
+    type: string
+    required: false
+    description: Description of the attribute
+    meta:
+      alias: Attribute Description
+  data_type:
+    type: reference
+    target: sw_unit_data_type
+    required: false
+    description: Data type of the attribute (reference to a software data structure)
+    meta:
+      alias: Attribute Data Type (Design)
+  multiplicity:
+    type: string
+    required: false
+    description: Multiplicity of the attribute (e.g., 1, 0..*, 1..*)
+    meta:
+      alias: Attribute Multiplicity
+  scope:
+    type: enum
+    values: [public, private, protected]
+    required: false
+    description: Scope of the attribute (public, private, or protected)
+    meta:
+      alias: Attribute Scope

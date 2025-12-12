@@ -1,0 +1,95 @@
+name: sw_unit_method
+kind: node
+description: Represents a software unit method
+meta:
+  alias: Software Unit Method
+  icon: symbol-property
+  
+fields:
+  description:
+    type: string
+    required: false
+    description: Description of the method
+    meta:
+      alias: Method description
+  parameters:
+    type: array
+    items:
+      type: object
+      description: Method parameters
+      meta:
+        alias: Parameters
+      fields:
+        name:
+          type: string
+          required: false
+          description: Name of the parameter
+          meta:
+            alias: Parameter Name
+        description:
+          type: string
+          required: false
+          description: Description of the parameter
+          meta:
+            alias: Parameter Description
+        data_type:
+          type: reference
+          target: sw_unit_data_type
+          required: false
+          description: Data type of the parameter (reference to a software data structure)
+          meta:
+            alias: Parameter Data Type (Design)
+        unit_ref:
+          type: reference
+          target: sw_unit
+          required: false
+          description: Reference to a software unit/class when the parameter is a class reference
+          meta:
+            alias: Parameter Class Reference
+        direction:
+          type: enum
+          values: [in, out, inout]
+          required: false
+          description: Direction of the parameter (in, out, or inout)
+          meta:
+            alias: Parameter Direction
+        multiplicity:
+          type: string
+          required: false
+          description: Multiplicity of the parameter (e.g., 1, 0..*, 1..*)
+          meta:
+            alias: Parameter Multiplicity
+  return:
+    type: object
+    fields:
+      data_type:
+        type: reference
+        target: sw_unit_data_type
+        required: false
+        description: Data type of the return value (reference to a software data structure)
+        meta:
+          alias: Return Data Type (Design)
+      unit_ref:
+        type: reference
+        target: sw_unit
+        required: false
+        description: Reference to a software unit/class when the return value is a class reference
+        meta:
+          alias: Return Class Reference
+      description:
+        type: string
+        required: false
+        description: Description of the return value
+        meta:
+          alias: Return Description
+    description: Return value of the method
+    required: false
+    meta:
+      alias: Return Value
+  scope:
+    type: enum
+    values: [public, private, protected]
+    required: false
+    description: Scope of the method (public, private, or protected)
+    meta:
+      alias: Method Scope

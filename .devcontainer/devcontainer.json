@@ -1,0 +1,76 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/alpine
+{
+	"name": "Alpine",
+	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+	//1. If use image uncomment these lines between *
+	// ************************************************************
+	//"image": "mcr.microsoft.com/devcontainers/base:alpine-3.20"
+	// ************************************************************
+	//2. If use dockerfile uncomment lines between +
+	// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	//"build": {
+	//	// Path is relative to the devcontainer.json file.
+	//	"dockerfile": "Dockerfile"
+	//},
+	// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	//3. If use docker compose uncomment lines between ^
+	// ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+	"dockerComposeFile": [
+		"docker-compose.yml"
+	],
+	"service": "vscode",
+	"workspaceFolder": "/workspace",
+	"runServices": [
+		"vscode",
+		"http_server"
+	],
+	// ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-vscode.cpptools-extension-pack",
+				"Gxl.git-graph-3",
+				"mathematic.vscode-pdf",
+				"/workspace/.devcontainer/hephora-1.0.2.vsix",
+				"jebbs.plantuml",
+				"MermaidChart.vscode-mermaid-chart",
+				"GitHub.copilot-chat",
+				"mhutchie.git-graph",
+				"seunlanlege.action-buttons"
+			],
+			"mcp": {
+				"servers": {
+					"markitdown": {
+						// Tell VS Code MCP client to use HTTP transport directly
+						"type": "http",
+						"url": "http://markitdown_mcp:3001/mcp/"
+					},
+					"github": {
+						"type": "http",
+						"url": "https://api.githubcopilot.com/mcp/",
+						// Enable all GitHub MCP toolsets (projects, actions, code security, etc.)
+						// and allow dynamic tool discovery for this session.
+						"headers": {
+							"X-MCP-Toolsets": "default,projects"
+						}
+					}
+				}
+			}
+		}
+	},
+	"forwardPorts": [
+		8080
+	]
+	// Run as root to ensure access to /var/run/docker.sock without host group mapping hassles
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	// "features": {},
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+	// Use 'postCreateCommand' to run commands after the container is created.
+	// "postCreateCommand": "uname -a",
+	// Configure tool-specific properties.
+	// "customizations": {},
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	// "remoteUser": "root"
+}

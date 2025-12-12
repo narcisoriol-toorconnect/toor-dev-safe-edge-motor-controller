@@ -1,0 +1,13 @@
+Unit Tests
+==========
+
+{% if strategies and strategies|length > 0 %}
+.. toctree::
+   :maxdepth: 2
+   :caption: Strategies
+
+{% for s in strategies %}   strategies/{{ s.slug }}
+{% endfor %}
+{% else %}
+No unit test strategies defined.
+{% endif %}

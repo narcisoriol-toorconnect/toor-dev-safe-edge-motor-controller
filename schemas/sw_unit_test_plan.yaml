@@ -1,0 +1,30 @@
+name: sw_unit_test_plan
+kind: node
+description: Represents a test plan
+meta:
+  alias: Test Plan
+  icon: output
+
+fields:
+  description:
+    type: string
+    required: false
+    description: Description of the test plan
+    meta:
+      alias: Description
+
+  sw_unit:
+    type: reference
+    target: sw_unit
+    required: false
+    description: The software unit that this test plan is associated with
+    meta:
+      alias: Software Unit
+
+children:
+  test_cases:
+    node: sw_unit_test_case
+    description: List of test cases directly associated with this test plan
+  evidences:
+    node: attachment
+    description: List of evidences directly associated with this test plan

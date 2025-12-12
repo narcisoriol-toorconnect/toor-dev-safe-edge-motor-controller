@@ -1,0 +1,86 @@
+name: sw_interface
+kind: node
+description: Represents a software interface
+meta:
+  alias: Software Interface
+  icon: symbol-interface
+fields:
+  sw_requirements:
+    type: array
+    items:
+      type: reference
+      target: sw_requirement
+    description: Software requirements fulfilled by this interface
+    required: false
+    meta:
+      alias: Software Requirements
+  
+  description:
+    type: string
+    required: false
+    description: Description of the software interface
+    meta:
+      alias: Description
+      format:
+        type: block
+        
+  provided_by:
+    type: array
+    items:
+      type: reference
+      target: sw_component
+    description: Components that provide this interface
+    required: false
+    meta:
+      alias: Provided By
+
+  required_by:
+    type: array
+    items:
+      type: reference
+      target: sw_component
+    description: Components that require this interface
+    required: false
+    meta:
+      alias: Required By
+
+  sw_data_structures:
+    type: array
+    items:
+      type: reference
+      target: sw_data_structure
+    description: Data structures linked to this interface
+    required: false
+    meta:
+      alias: Data Structures
+
+  data_direction:
+    type: enum
+    values: [to provided, to required, bidirectional]
+    required: false
+    description: Direction of the interface (to provided, to required, or bidirectional)
+    meta:
+      alias: Direction
+
+  communication:
+    type: object
+    fields:
+      mode:
+        type: enum
+        values: [synchronous, asynchronous]
+        required: false
+        description: Communication mode of the interface (synchronous or asynchronous)
+        meta:
+          alias: Communication Mode
+
+      type:
+        type: string
+        required: false
+        description: Communication type of the interface (publish-subscribe, request-response, etc.)
+        meta:
+          alias: Communication Type
+
+children:
+  attachments:
+    node: attachment
+    description: List of attachments related to this interface

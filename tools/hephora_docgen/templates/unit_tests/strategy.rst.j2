@@ -1,0 +1,48 @@
+{{ title }}
+{{ '=' * title|length }}
+
+{% if description %}{{ description }}{% endif %}
+
+{% if environment %}
+Environment
+-----------
+
+{{ environment }}
+{% endif %}
+
+{% if tools and tools|length > 0 %}
+Tools
+-----
+
+- {% for t in tools %}{{ t }}{% if not loop.last %}
+- {% endif %}{% endfor %}
+{% endif %}
+
+Test Plans
+----------
+{% if plans and plans|length > 0 %}
+.. list-table:: Plans
+   :header-rows: 1
+
+   * - Unit
+     - Plan
+     - Description
+     - Test Cases
+     - Evidences
+{% for p in plans %}
+   * - {% if p.unit %}:doc:`{{ p.unit.label }} <{{ p.unit.doc_path }}>`{% else %}-{% endif %}
+     - :doc:`{{ p.label }} <{{ p.doc_path }}>`
+     - {{ p.description or '-' }}
+     - {{ p.test_cases_count or 0 }}
+     - {{ p.evidences_count or 0 }}
+{% endfor %}
+
+.. toctree::
+   :maxdepth: 1
+   :hidden:
+
+{% for p in plans %}   ../plans/{{ p.slug }}
+{% endfor %}
+{% else %}
+- None
+{% endif %}

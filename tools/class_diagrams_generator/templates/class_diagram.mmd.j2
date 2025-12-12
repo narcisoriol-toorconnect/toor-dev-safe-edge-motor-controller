@@ -1,0 +1,67 @@
+classDiagram
+    class {{main_class.id.replace("-", "_")}}["{{main_class.label}}"]
+
+    {% if main_class.attributes %}
+    {% for a in main_class.attributes %}
+    {{main_class.id.replace("-", "_")}} : {{'+' if a.scope == 'public' else '#' if a.scope == 'protected' else '-' if a.scope == 'private' else ''}}{{a.type}} {{a.name}}
+    {% endfor %}
+    {% endif %}
+
+    {% if main_class.methods %}
+    {% for m in main_class.methods %}
+    {{main_class.id.replace("-", "_")}} : {{'+' if m.scope == 'public' else '#' if m.scope == 'protected' else '-' if m.scope == 'private' else ''}}{{m.name}}{% if m.parameters %}({% for p in m.parameters %}{{p.type if p.type else ''}}{{' ' if p.type and p.name else ''}}{{p.name if p.name else ''}}{{', ' if not loop.last}}{% endfor %}){% else %}(){% endif %} {{m.return_type}}
+    {% endfor %}
+    {% endif %}
+
+
+    {% for c in classes %}
+    class {{c.id.replace("-", "_")}}["{{c.label}}"]
+
+    {% if c.attributes %}
+    {% for a in c.attributes %}
+    {{c.id.replace("-", "_")}} : {{'+' if a.scope == 'public' else '#' if a.scope == 'protected' else '-' if a.scope == 'private' else ''}}{{a.type}} {{a.name}}
+    {% endfor %}
+    {% endif %}
+
+    {% if c.methods %}
+    {% for m in c.methods %}
+    {{c.id.replace("-", "_")}} : {{'+' if m.scope == 'public' else '#' if m.scope == 'protected' else '-' if m.scope == 'private' else ''}}{{m.name}}{% if m.parameters %}({% for p in m.parameters %}{{p.type if p.type else ''}}{{' ' if p.type and p.name else ''}}{{p.name if p.name else ''}}{{', ' if not loop.last}}{% endfor %}){% else %}(){% endif %} {{m.return_type}}
+    {% endfor %}
+    {% endif %}
+    {% endfor %}
+
+    {% if dependencies %}
+    {% for r in dependencies %}
+    {{main_class.id.replace("-", "_")}} "{{r.origin_multiplicity}}" ..> "{{r.target_multiplicity}}" {{r.id.replace("-", "_")}}
+    {% endfor %}
+    {% endif %}
+
+    {% if associations %}
+    {% for r in associations %}
+    {{main_class.id.replace("-", "_")}} "{{r.origin_multiplicity}}" --> "{{r.target_multiplicity}}" {{r.id.replace("-", "_")}}
+    {% endfor %}
+    {% endif %}
+
+    {% if aggregations %}
+    {% for r in aggregations %}
+    {{main_class.id.replace("-", "_")}} "{{r.origin_multiplicity}}" ..o "{{r.target_multiplicity}}" {{r.id.replace("-", "_")}}
+    {% endfor %}
+    {% endif %}
+
+    {% if compositions %}
+    {% for r in compositions %}
+    {{main_class.id.replace("-", "_")}} "{{r.origin_multiplicity}}" ..* "{{r.target_multiplicity}}" {{r.id.replace("-", "_")}}
+    {% endfor %}
+    {% endif %}
+
+    {% if realizations %}
+    {% for r in realizations %}
+    {{main_class.id.replace("-", "_")}} "{{r.origin_multiplicity}}" ..|> "{{r.target_multiplicity}}" {{r.id.replace("-", "_")}}
+    {% endfor %}
+    {% endif %}
+
+    {% if generalizations %}
+    {% for r in generalizations %}
+    {{main_class.id.replace("-", "_")}} "{{r.origin_multiplicity}}" --|> "{{r.target_multiplicity}}" {{r.id.replace("-", "_")}}
+    {% endfor %}
+    {% endif %}

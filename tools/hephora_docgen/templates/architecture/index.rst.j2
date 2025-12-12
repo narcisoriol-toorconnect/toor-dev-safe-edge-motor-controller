@@ -1,0 +1,69 @@
+{{ title }}
+{{ '=' * title|length }}
+
+{% if description %}
+{{ description }}
+{% endif %}
+
+Components
+----------
+
+.. list-table:: Components
+   :header-rows: 1
+
+   * - Component
+     - Summary
+     - Requirements
+{% for c in components %}
+   * - :doc:`{{ c.label }} <{{ c.doc_path }}>`
+     - {{ (c.description or '').splitlines()[0] if c.description else '' }}
+     - {% if c.requirements and c.requirements|length > 0 %}{% for r in c.requirements %}:doc:`{{ r.label }} <{{ r.doc_path }}>`{% if not loop.last %}, {% endif %}{% endfor %}{% else %}-{% endif %}
+{% endfor %}
+
+
+.. toctree::
+  :maxdepth: 1
+
+{% for c in components %}
+  {{ c.doc_path }}
+{% endfor %}
+
+{% if interfaces_all and interfaces_all|length > 0 %}
+.. toctree::
+  :maxdepth: 1
+  :hidden:
+
+{% for i in interfaces_all %}
+  interfaces/{{ i.slug }}
+{% endfor %}
+{% endif %}
+
+{% if attachments and attachments|length > 0 %}
+Attachments
+-----------
+
+{% for a in attachments %}
+{% if a.is_image %}
+.. figure:: {{ a.doc_path }}
+  :alt: {{ a.description or a.filename }}
+  :align: center
+  :figwidth: 80%
+
+  {{ a.description or a.filename }}
+
+{% else %}
+* {{ a.description or a.filename }} (file: ``{{ a.doc_path }}``)
+{% endif %}
+{% endfor %}
+{% endif %}
+
+{% if data_structures_all and data_structures_all|length > 0 %}
+.. toctree::
+  :maxdepth: 1
+  :hidden:
+
+{% for d in data_structures_all %}
+  data_structures/{{ d.slug }}
+{% endfor %}
+{% endif %}
+

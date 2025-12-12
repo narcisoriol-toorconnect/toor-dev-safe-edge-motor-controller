@@ -1,0 +1,21 @@
+graph LR
+
+{% for c in components %}
+  {{c.id.replace("-", "_")}}["{{c.label}}"]
+{% endfor %}
+
+{% for i in interfaces %}
+  {{i.id.replace("-", "_")}}(({{i.label}}))
+{% endfor %}
+
+{% for i in interfaces %}
+  {% for prov in i.provided_by %}
+    {{prov.replace("-", "_")}} --> {{i.id.replace("-", "_")}}
+  {% endfor %}
+{% endfor %}
+
+{% for i in interfaces %}
+  {% for req in i.required_by %}
+    {{req.replace("-", "_")}} -.-> {{i.id.replace("-", "_")}}
+  {% endfor %}
+{% endfor %}

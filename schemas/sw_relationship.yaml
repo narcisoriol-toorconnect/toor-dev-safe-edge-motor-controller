@@ -1,0 +1,72 @@
+name: sw_relationship
+kind: node
+description: Represents a relationship between software units
+meta:
+  alias: Software Relationship
+  icon: arrow-both
+
+fields:
+  type:
+    type: enum
+    values: [dependency, association, aggregation, composition, realization]
+    required: false
+    description: Type of relationship
+    meta:
+      alias: Relationship Type
+
+  interface_ref:
+    type: reference
+    target: sw_interface
+    required: false
+    description: Architectural interface that this relationship realizes at design level (optional)
+    meta:
+      alias: Realized Interface
+
+  source:
+    type: object
+    fields:
+      ref:
+        type: reference
+        target: sw_unit
+        required: false
+        description: Source software unit of the relationship
+        meta:
+          alias: Source Software Unit
+      multiplicity:
+        type: string
+        required: false
+        description: Multiplicity at the source end (e.g., 1, 0..*, 1..*)
+        meta:
+          alias: Source Multiplicity
+
+  target:
+    type: object
+    fields:
+      ref:
+        type: reference
+        target: sw_unit
+        required: false
+        description: Target software unit of the relationship
+        meta:
+          alias: Target Software Unit
+      multiplicity:
+        type: string
+        required: false
+        description: Multiplicity at the target end (e.g., 1, 0..*, 1..*)
+        meta:
+          alias: Target Multiplicity
+
+  direction:
+    type: enum
+    values: [unidirectional, bidirectional]
+    required: false
+    description: Direction of the relationship (unidirectional or bidirectional)
+    meta:
+      alias: Direction
+
+  description:
+    type: string
+    required: false
+    description: Description of the relationship
+    meta:
+      alias: Relationship Description

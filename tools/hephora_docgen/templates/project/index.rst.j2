@@ -1,0 +1,28 @@
+{{ title }}
+{{ '=' * title|length }}
+
+{% if description %}
+{{ description }}
+{% endif %}
+
+{% if client %}
+Client
+------
+
+.. list-table:: Client Information
+   :header-rows: 1
+
+   * - Field
+     - Value
+{% for k, v in client.items() %}
+   * - {{ k }}
+     - {{ v }}
+{% endfor %}
+{% endif %}
+
+{% if version %}
+Version
+-------
+
+{{ version }}
+{% endif %}

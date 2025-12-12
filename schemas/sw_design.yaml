@@ -1,0 +1,28 @@
+name: sw_design
+kind: node
+description: Represents the software design
+meta:
+  alias: Software Design
+  icon: edit
+
+fields:
+  description:
+    type: string
+    required: false
+    description: Description of the software design
+    meta:
+      alias: Description
+      format:
+        type: editor
+        file: md
+
+children:
+  sw_units:
+    node: sw_unit
+    description: List of software units in this design
+  # sw_relationships:
+  #   node: sw_relationship
+  #   description: List of relationships between software units in this design
+  attachments:
+    node: attachment
+    description: List of attachments directly associated with this project

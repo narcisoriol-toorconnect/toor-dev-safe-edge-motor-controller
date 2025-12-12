@@ -1,0 +1,32 @@
+name: sw_integration_test_plan
+kind: node
+description: Represents a test plan
+meta:
+  alias: Test Plan
+  icon: output
+
+fields:
+  description:
+    type: string
+    required: false
+    description: Description of the test plan
+    meta:
+      alias: Description
+  
+  sw_components:
+    type: array
+    items:
+      type: reference
+      target: sw_component
+    required: false
+    description: List of software components involved in this integration test plan
+    meta:
+      alias: Software Components
+
+children:
+  test_cases:
+    node: sw_integration_test_case
+    description: List of test cases directly associated with this test plan
+  evidences:
+    node: attachment
+    description: List of evidences directly associated with this test plan
