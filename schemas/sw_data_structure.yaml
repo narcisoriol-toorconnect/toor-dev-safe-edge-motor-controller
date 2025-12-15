@@ -19,38 +19,37 @@ fields:
       fields:
         name:
           type: string
-          required: false
           description: Name of the field in the data structure
           meta:
             alias: Field Name
+        description:
+          type: string
+          description: Description of the field
+          meta:
+            alias: Field Description
         data_type:
           type: reference
           target: sw_data_structure
-          required: false
           description: Reference to another data structure (for nested structures)
           meta:
             alias: Data Type Data Structure
         unit:
           type: string
-          required: false
           description: Unit of measurement for the field (if applicable)
           meta:
             alias: Unit
         resolution:
           type: string
-          required: false
           description: Resolution or precision of the field (if applicable)
           meta:
             alias: Resolution
         range:
           type: string
-          required: false
           description: Valid range of values for the field (if applicable)
           meta:
             alias: Range
         multiplicity:
           type: string
-          required: false
           description: Multiplicity of the field (e.g., 1, 0..*, 1..*)
           meta:
             alias: Multiplicity

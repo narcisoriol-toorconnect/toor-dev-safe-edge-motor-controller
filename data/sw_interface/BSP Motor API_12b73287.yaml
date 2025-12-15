@@ -1,0 +1,12 @@
+_profile: sw_interface
+_id: 12b73287-276e-42b7-8042-fa1c91dbb6c9
+_label: BSP Motor API
+_parent_id: c1c9f061-bbb9-41c9-8aa1-d9187e32a699
+provided_by:
+  - 07b3c83f-cbdd-47b3-87d1-362e83099f7e
+required_by:
+  []
+sw_data_structures:
+  - cc88012f-7d03-4c88-b5ba-cf2ff97e7d39
+sw_requirements:
+  []

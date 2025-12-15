@@ -1,0 +1,21 @@
+_profile: sw_data_structure
+_id: cc88012f-7d03-4c88-b5ba-cf2ff97e7d39
+_label: Duties
+_parent_id: c1c9f061-bbb9-41c9-8aa1-d9187e32a699
+description: Three-phase PWM duty commands for the motor power stage, expressed in permille (0..1000). Atomic update across A/B/C at next PWM period.
+fields:
+  - description: PWM duty for phase A of the 3‑phase bridge; applied atomically with B/C at the next PWM period.
+    name: duty_a
+    range: 0..1000
+    resolution: 1
+    unit: permille
+  - description: PWM duty for phase B of the 3‑phase bridge; applied atomically with A/C at the next PWM period.
+    name: duty_b
+    range: 0..1000
+    resolution: 1
+    unit: permille
+  - description: PWM duty for phase C of the 3‑phase bridge; applied atomically with A/B at the next PWM period.
+    name: duty_c
+    range: 0..1000
+    resolution: 1
+    unit: permille
