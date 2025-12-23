@@ -1,0 +1,12 @@
+_profile: sw_data_structure
+_id: 325a16e6-a957-425a-b768-a941448069e9
+_label: Heatsink Temperature
+_parent_id: c1c9f061-bbb9-41c9-8aa1-d9187e32a699
+description: Heatsink temperature measurement used to protect power electronics from thermal overload and to trigger safety actions.
+fields:
+  - description: Temperature of the inverter heatsink measured via temperature sensor.
+    multiplicity: 1
+    name: heatsink_temperature
+    range: −40 °C … +150 °C
+    resolution: 0.1 °C
+    unit: °C

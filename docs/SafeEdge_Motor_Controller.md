@@ -27,6 +27,7 @@ From a user perspective, the product:
 - Displays system state and faults on an integrated screen
 - Enters a defined safe state under fault conditions
 - Supports controlled updates after deployment
+- Allows configurable running modes and algorithms
 
 The product must behave deterministically, transparently, and predictably under all operating conditions.
 
@@ -71,6 +72,7 @@ As such:
 - Safety-critical behavior must remain protected from unintended changes
 - Operators must be able to identify the software version running on the device
 - Update and rollback behavior must be clearly defined and documented
+- Client must be able to create configurable running modes easily without reflashing the safety-critical firmware
 
 The update mechanism must be suitable for regulated environments and field deployment.
 
@@ -169,7 +171,7 @@ This section describes the concrete functionality proposed for the SafeEdge Moto
 
 ### 12.1 Device Functional Summary
 - Controls a single electric motor with integrated safety supervision.
-- Core controls: Start/Stop, Mode (Stop/Run), Speed Setpoint (0–100%).
+- Core controls: Start/Stop and selecting the desired profile
 - Deterministic behavior under all conditions; transitions to a defined safe state on faults.
 - Built‑in HMI shows state, faults, and running version.
 - Browser‑based simulation mirrors device behavior for demos and testing.

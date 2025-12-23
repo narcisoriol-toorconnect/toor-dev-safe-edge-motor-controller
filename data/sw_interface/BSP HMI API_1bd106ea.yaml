@@ -1,0 +1,13 @@
+_profile: sw_interface
+_id: 1bd106ea-6f7b-4bd1-ae1c-16ff7111e9a8
+_label: BSP HMI API
+_parent_id: c1c9f061-bbb9-41c9-8aa1-d9187e32a699
+description: Feature-level HMI interface for display output and input events, including text and graphics primitives and input scanning.
+provided_by:
+  - 07b3c83f-cbdd-47b3-87d1-362e83099f7e
+required_by:
+  - f63c54f5-a0c2-463c-add5-fbdfa8d8bd02
+sw_data_structures:
+  - 1577349d-7b98-4577-9cd6-e4b649494835
+sw_requirements:
+  []

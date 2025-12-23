@@ -1,0 +1,8 @@
+_profile: sw_component
+_id: 45f99c0a-b709-45f9-9121-e2747ce48e10
+_label: Safe App
+_parent_id: c1c9f061-bbb9-41c9-8aa1-d9187e32a699
+description: Safety control state machine and coordination logic governing safety behavior and sequences within the safety core.
+parent_reference: f63c54f5-a0c2-463c-add5-fbdfa8d8bd02
+sw_requirements:
+  []

@@ -1,0 +1,18 @@
+_profile: sw_data_structure
+_id: 78753408-eec2-4875-bfff-dd2d557943a2
+_label: Motor Feedback
+_parent_id: c1c9f061-bbb9-41c9-8aa1-d9187e32a699
+description: Status of motor position feedback signals (encoder and/or Hall sensors).
+fields:
+  - description: Indicates availability and validity of motor position feedback.
+    multiplicity: 1
+    name: feedback_status
+    range: N/A
+    resolution: N/A
+    unit: Enum. NOT_PRESENT, OK, INVALID, LOST
+  - description: Motor electrical/mechanical speed derived from encoder or Hall feedback.
+    multiplicity: 1
+    name: motor_speed_rpm
+    range: 0 … 10 000 RPM
+    resolution: 1 RPM
+    unit: RPM

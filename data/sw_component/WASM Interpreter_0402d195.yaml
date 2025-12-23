@@ -1,0 +1,8 @@
+_profile: sw_component
+_id: 0402d195-cb6c-4402-b9a3-404e6fffc3cc
+_label: WASM Interpreter
+_parent_id: c1c9f061-bbb9-41c9-8aa1-d9187e32a699
+description: Execution engine and sandbox for WebAssembly modules within the Application Runtime. Enforces isolation and resource limits and implements host import bindings for system services.
+parent_reference: 964846a0-0377-4648-9e52-36dfc54068cb
+sw_requirements:
+  []

@@ -1,0 +1,8 @@
+_profile: sw_component
+_id: 64fd6134-1baf-44fd-92dc-9d414e97b4c7
+_label: Persistent Storage Service
+_parent_id: c1c9f061-bbb9-41c9-8aa1-d9187e32a699
+description: Service for configuration, parameters, and persistent logs. Ensures atomic updates, integrity checks, and wear-aware behavior across nonvolatile media.
+parent_reference: f63c54f5-a0c2-463c-add5-fbdfa8d8bd02
+sw_requirements:
+  []

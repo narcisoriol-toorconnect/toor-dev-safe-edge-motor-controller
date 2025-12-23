@@ -2,10 +2,11 @@ _profile: sw_interface
 _id: 3aeb1d20-6617-4aeb-939e-eb4da97a7850
 _label: BSP System API
 _parent_id: c1c9f061-bbb9-41c9-8aa1-d9187e32a699
+description: System services interface presenting monotonic timekeeping, delays, watchdog control, reset, and basic system information.
 provided_by:
   - 07b3c83f-cbdd-47b3-87d1-362e83099f7e
 required_by:
-  []
+  - f63c54f5-a0c2-463c-add5-fbdfa8d8bd02
 sw_data_structures:
   - ce80875f-5449-4e80-9f4e-04059f72b5b1
 sw_requirements:

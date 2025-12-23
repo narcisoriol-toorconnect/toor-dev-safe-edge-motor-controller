@@ -1,0 +1,13 @@
+_profile: sw_interface
+_id: 61da5179-75e2-41da-b733-d9811326d70c
+_label: BSP Storage API
+_parent_id: c1c9f061-bbb9-41c9-8aa1-d9187e32a699
+description: Block-device interface to removable mass storage, providing presence and state, logical block geometry, read and write, and flush operations.
+provided_by:
+  - 07b3c83f-cbdd-47b3-87d1-362e83099f7e
+required_by:
+  - f63c54f5-a0c2-463c-add5-fbdfa8d8bd02
+sw_data_structures:
+  - c8f82a1f-b7ec-48f8-a497-c3e436495fb6
+sw_requirements:
+  []

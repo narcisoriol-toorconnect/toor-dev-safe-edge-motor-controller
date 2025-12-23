@@ -1,0 +1,7 @@
+_profile: sw_component
+_id: f63c54f5-a0c2-463c-add5-fbdfa8d8bd02
+_label: Safe Firmware
+_parent_id: c1c9f061-bbb9-41c9-8aa1-d9187e32a699
+description: Safety core that owns motion authority and safe-state actions. Implements self-tests, runtime monitoring, a safety finite-state machine, command interlocks, motor control loops, watchdog supervision, and persistent logging.
+sw_requirements:
+  []

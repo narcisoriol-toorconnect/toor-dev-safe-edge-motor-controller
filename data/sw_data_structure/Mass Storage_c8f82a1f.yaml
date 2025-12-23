@@ -1,0 +1,24 @@
+_profile: sw_data_structure
+_id: c8f82a1f-b7ec-48f8-a497-c3e436495fb6
+_label: Mass Storage
+_parent_id: c1c9f061-bbb9-41c9-8aa1-d9187e32a699
+description: Represents a removable block storage device used by higher layers to implement a filesystem.
+fields:
+  - description: Current presence and readiness state of the mass-storage device.
+    multiplicity: 1
+    name: device_state
+    range: N/A
+    resolution: N/A
+    unit: (enum). NOT_PRESENT, READY, ERROR.
+  - description: Logical block size of the mass-storage device.
+    multiplicity: 1
+    name: block_size_bytes
+    range: Device dependent (e.g. 64, 128, 256, 512)
+    resolution: 1 byte
+    unit: bytes
+  - description: Total number of logical blocks available on the device.
+    multiplicity: 1
+    name: block_count
+    range: Device dependent, ≥ 1
+    resolution: 1 block
+    unit: blocks

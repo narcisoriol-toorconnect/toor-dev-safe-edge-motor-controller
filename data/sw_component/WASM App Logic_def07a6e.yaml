@@ -1,0 +1,8 @@
+_profile: sw_component
+_id: def07a6e-d345-4ef0-be40-fcd312f4d581
+_label: WASM App Logic
+_parent_id: c1c9f061-bbb9-41c9-8aa1-d9187e32a699
+description: Replaceable non-safety application module implementing HMI workflows and domain-specific behavior. Interacts through host imports without direct hardware access and is delivered via signed A/B bundles.
+parent_reference: 964846a0-0377-4648-9e52-36dfc54068cb
+sw_requirements:
+  []

@@ -1,0 +1,12 @@
+_profile: sw_data_structure
+_id: 53b20a0c-058e-43b2-9a84-4c764ff53f0c
+_label: DC bus voltage
+_parent_id: c1c9f061-bbb9-41c9-8aa1-d9187e32a699
+description: Represents the instantaneous voltage of the DC link supplying the motor inverter. Used for power integrity monitoring, startup qualification, and undervoltage/overvoltage protection.
+fields:
+  - description: Instantaneous DC bus (DC link) voltage measured at the inverter input.
+    multiplicity: 1
+    name: dc_bus_voltage
+    range: 0 V … 80 V
+    resolution: 0.1 V
+    unit: V

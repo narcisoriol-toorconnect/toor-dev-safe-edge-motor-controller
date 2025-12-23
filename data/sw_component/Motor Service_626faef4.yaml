@@ -1,0 +1,8 @@
+_profile: sw_component
+_id: 626faef4-f0fa-426f-9ff2-b55914e0790c
+_label: Motor Service
+_parent_id: c1c9f061-bbb9-41c9-8aa1-d9187e32a699
+description: Service encapsulating motor control and telemetry. Applies safety interlocks and state-machine gates, provides high-level commands and status, and coordinates actuation and feedback processing.
+parent_reference: f63c54f5-a0c2-463c-add5-fbdfa8d8bd02
+sw_requirements:
+  []

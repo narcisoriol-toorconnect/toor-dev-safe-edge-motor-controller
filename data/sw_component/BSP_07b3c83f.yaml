@@ -2,5 +2,6 @@ _profile: sw_component
 _id: 07b3c83f-cbdd-47b3-87d1-362e83099f7e
 _label: BSP
 _parent_id: c1c9f061-bbb9-41c9-8aa1-d9187e32a699
+description: Deterministic, feature-level hardware abstraction for power stage, sensors, motor feedback, actuators, nonvolatile storage, removable storage, display/HMI, USB MSC, time, and watchdog. Hides peripheral and bus details and exposes stable, bounded APIs across platforms.
 sw_requirements:
   []

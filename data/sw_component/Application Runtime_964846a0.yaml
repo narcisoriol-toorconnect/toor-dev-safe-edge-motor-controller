@@ -1,0 +1,7 @@
+_profile: sw_component
+_id: 964846a0-0377-4648-9e52-36dfc54068cb
+_label: Application Runtime
+_parent_id: c1c9f061-bbb9-41c9-8aa1-d9187e32a699
+description: Container for non-safety application logic executed as WebAssembly. Provides isolation from hardware, host imports for safe operations, UI, and logging, and manages application lifecycle and update integration.
+sw_requirements:
+  []

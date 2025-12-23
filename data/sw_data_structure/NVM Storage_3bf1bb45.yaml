@@ -1,0 +1,24 @@
+_profile: sw_data_structure
+_id: 3bf1bb45-adc0-4bf1-8b35-91e059e5b28d
+_label: NVM Storage
+_parent_id: c1c9f061-bbb9-41c9-8aa1-d9187e32a699
+description: Represents a non-removable non-volatile storage device used to persist configuration, parameters, and device data across power cycles.
+fields:
+  - description: Availability state of the non-volatile storage device.
+    multiplicity: 1
+    name: device_state
+    range: N/A
+    resolution: N/A
+    unit: (enum). READY, ERROR.
+  - description: Logical block size of the non-volatile storage.
+    multiplicity: 1
+    name: block_size_bytes
+    range: Device dependent (e.g. 64, 128, 256, 512)
+    resolution: 1 byte
+    unit: bytes
+  - description: Total number of logical blocks available on the device.
+    multiplicity: 1
+    name: block_count
+    range: Device dependent, ≥ 1
+    resolution: 1 block
+    unit: blocks

@@ -1,0 +1,13 @@
+_profile: sw_interface
+_id: 1b65fb0a-1c8e-4b65-9075-c108796b08a6
+_label: BSP NVM API
+_parent_id: c1c9f061-bbb9-41c9-8aa1-d9187e32a699
+description: Block-oriented interface to on-device nonvolatile storage for configuration, parameters, and safety state, supporting read, write, and erase with error signaling; not a filesystem.
+provided_by:
+  - 07b3c83f-cbdd-47b3-87d1-362e83099f7e
+required_by:
+  - f63c54f5-a0c2-463c-add5-fbdfa8d8bd02
+sw_data_structures:
+  - 3bf1bb45-adc0-4bf1-8b35-91e059e5b28d
+sw_requirements:
+  []

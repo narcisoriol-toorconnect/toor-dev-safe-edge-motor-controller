@@ -1,0 +1,8 @@
+_profile: sw_component
+_id: 6c004606-9c9c-4c00-a8a1-bafde25b7ef6
+_label: HMI Service
+_parent_id: c1c9f061-bbb9-41c9-8aa1-d9187e32a699
+description: "Service responsible for user interaction: renders UI, handles input events, mediates user requests through safety interlocks, and supports log viewing and export."
+parent_reference: f63c54f5-a0c2-463c-add5-fbdfa8d8bd02
+sw_requirements:
+  []

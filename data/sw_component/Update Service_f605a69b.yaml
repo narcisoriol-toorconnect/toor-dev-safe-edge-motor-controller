@@ -1,0 +1,8 @@
+_profile: sw_component
+_id: f605a69b-de4f-4605-bdc5-21f59fac568f
+_label: Update Service
+_parent_id: c1c9f061-bbb9-41c9-8aa1-d9187e32a699
+description: Service implementing A/B application updates, including image verification, activation and rollback, and post-update self-tests. Tracks update state and artifacts.
+parent_reference: f63c54f5-a0c2-463c-add5-fbdfa8d8bd02
+sw_requirements:
+  []

@@ -2,11 +2,17 @@ _profile: sw_interface
 _id: 12b73287-276e-42b7-8042-fa1c91dbb6c9
 _label: BSP Motor API
 _parent_id: c1c9f061-bbb9-41c9-8aa1-d9187e32a699
+description: Feature-level motor control and feedback interface exposing PWM duty control, phase current sampling, DC bus voltage, motor feedback, and temperature with deterministic timing bounds.
 provided_by:
   - 07b3c83f-cbdd-47b3-87d1-362e83099f7e
 required_by:
-  []
+  - f63c54f5-a0c2-463c-add5-fbdfa8d8bd02
 sw_data_structures:
+  - 71f0db26-6c4b-41f0-93aa-9336cf48c575
+  - 53b20a0c-058e-43b2-9a84-4c764ff53f0c
   - cc88012f-7d03-4c88-b5ba-cf2ff97e7d39
+  - 325a16e6-a957-425a-b768-a941448069e9
+  - 78753408-eec2-4875-bfff-dd2d557943a2
+  - 1e94dc08-218d-4e94-8d3b-99139da37263
 sw_requirements:
   []

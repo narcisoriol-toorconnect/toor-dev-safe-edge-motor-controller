@@ -1,0 +1,24 @@
+_profile: sw_data_structure
+_id: 1e94dc08-218d-4e94-8d3b-99139da37263
+_label: Phase Current
+_parent_id: c1c9f061-bbb9-41c9-8aa1-d9187e32a699
+description: Three-phase current measurements (phase A/B/C).
+fields:
+  - description: Instantaneous electrical current flowing in motor phase A.
+    multiplicity: 1
+    name: phase_a
+    range: −50 A … +50 A
+    resolution: 0.01 A
+    unit: A
+  - description: Instantaneous electrical current flowing in motor phase B.
+    multiplicity: 1
+    name: phase_b
+    range: −50 A … +50 A
+    resolution: 0.01 A
+    unit: A
+  - description: Instantaneous electrical current flowing in motor phase C.
+    multiplicity: 1
+    name: phase_c
+    range: −50 A … +50 A
+    resolution: 0.01 A
+    unit: A
