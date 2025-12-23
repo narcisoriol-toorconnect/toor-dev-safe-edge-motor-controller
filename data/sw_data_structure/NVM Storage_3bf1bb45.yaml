@@ -7,18 +7,18 @@ fields:
   - description: Availability state of the non-volatile storage device.
     multiplicity: 1
     name: device_state
-    range: N/A
-    resolution: N/A
-    unit: (enum). READY, ERROR.
+    range: READY, ERROR
+    resolution: n/a
+    unit: enum
   - description: Logical block size of the non-volatile storage.
     multiplicity: 1
     name: block_size_bytes
     range: Device dependent (e.g. 64, 128, 256, 512)
-    resolution: 1 byte
+    resolution: 1
     unit: bytes
   - description: Total number of logical blocks available on the device.
     multiplicity: 1
     name: block_count
     range: Device dependent, ≥ 1
-    resolution: 1 block
+    resolution: 1
     unit: blocks

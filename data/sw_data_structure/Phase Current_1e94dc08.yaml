@@ -7,18 +7,18 @@ fields:
   - description: Instantaneous electrical current flowing in motor phase A.
     multiplicity: 1
     name: phase_a
-    range: −50 A … +50 A
+    range: -50 A .. +50 A
     resolution: 0.01 A
     unit: A
   - description: Instantaneous electrical current flowing in motor phase B.
     multiplicity: 1
     name: phase_b
-    range: −50 A … +50 A
+    range: -50 A .. +50 A
     resolution: 0.01 A
     unit: A
   - description: Instantaneous electrical current flowing in motor phase C.
     multiplicity: 1
     name: phase_c
-    range: −50 A … +50 A
+    range: -50 A .. +50 A
     resolution: 0.01 A
     unit: A

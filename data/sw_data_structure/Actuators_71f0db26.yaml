@@ -7,12 +7,12 @@ fields:
   - description: Current state of the motor power relay or contactor. When OPEN, the motor is electrically isolated from the DC bus. When CLOSED, electrical power may be supplied to the motor inverter.
     multiplicity: 1
     name: motor_relay_state
-    range: N/A
-    resolution: N/A
-    unit: (enum). OPEN -> Motor electrically isolated.  CLOSED -> Motor electrically connected
+    range: OPEN, CLOSED
+    resolution: n/a
+    unit: enum
   - description: Current state of the motor mechanical brake. When ENGAGED, the motor shaft is mechanically locked. When RELEASED, the motor shaft is free to rotate.
     multiplicity: 1
     name: brake_state
-    range: N/A
-    resolution: N/A
-    unit: (enum). ENGAGED -> Brake applied, shaft locked. RELEASED -> Brake released, shaft free
+    range: ENGAGED, RELEASED
+    resolution: n/a
+    unit: enum

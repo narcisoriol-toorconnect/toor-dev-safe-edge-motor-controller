@@ -5,26 +5,26 @@ _parent_id: c1c9f061-bbb9-41c9-8aa1-d9187e32a699
 description: Hardware abstraction for the touchscreen HMI. Provides a fixed-size framebuffer for pixel rendering and reports raw touch events in screen pixel coordinates.
 fields:
   - description: Raw pixel framebuffer for the touchscreen display. Widgets and UI drawing code write directly into this buffer. Pixels are encoded in RGB565 format and mapped to a fixed 240×320 display.
-    multiplicity: 240 × 320
+    multiplicity: 240x320
     name: framebuffer
-    range: 0x0000 … 0xFFFF
+    range: 0x0000 .. 0xFFFF
     resolution: "16 bits per pixel (RGB565: 5 bits red, 6 bits green, 5 bits blue)"
     unit: RGB565 pixel
   - description: Type of raw touch interaction detected by the touchscreen controller.
     multiplicity: 1
     name: touch_event_type
-    range: N/A
-    resolution: N/A
-    unit: (enum).TOUCH_DOWN, TOUCH_MOVE, TOUCH_UP.
+    range: TOUCH_DOWN, TOUCH_MOVE, TOUCH_UP
+    resolution: n/a
+    unit: enum
   - description: Horizontal pixel coordinate of the latest touch event.
     multiplicity: 1
     name: touch_x_px
-    range: 0 … 239
+    range: 0 .. 239
     resolution: 1 px
     unit: pixels
   - description: Vertical pixel coordinate of the latest touch event.
     multiplicity: 1
     name: touch_y_px
-    range: 0 … 319
+    range: 0 .. 319
     resolution: 1 px
     unit: pixels

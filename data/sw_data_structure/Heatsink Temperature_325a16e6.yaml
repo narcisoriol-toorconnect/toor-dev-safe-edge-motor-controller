@@ -7,6 +7,6 @@ fields:
   - description: Temperature of the inverter heatsink measured via temperature sensor.
     multiplicity: 1
     name: heatsink_temperature
-    range: −40 °C … +150 °C
+    range: -40 °C .. +150 °C
     resolution: 0.1 °C
     unit: °C

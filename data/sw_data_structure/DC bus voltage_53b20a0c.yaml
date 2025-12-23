@@ -7,6 +7,6 @@ fields:
   - description: Instantaneous DC bus (DC link) voltage measured at the inverter input.
     multiplicity: 1
     name: dc_bus_voltage
-    range: 0 V … 80 V
+    range: 0 .. 80 V
     resolution: 0.1 V
     unit: V

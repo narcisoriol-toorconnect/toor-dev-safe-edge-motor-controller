@@ -4,9 +4,9 @@ _label: Time
 _parent_id: c1c9f061-bbb9-41c9-8aa1-d9187e32a699
 description: Time API data interface
 fields:
-  - description: Monotonic counter since power on
+  - description: Monotonic milliseconds since power-on
     multiplicity: 1
-    name: Uptime
-    range: 64 bits
+    name: uptime_ms
+    range: 0 .. 2^64-1
     resolution: 1
     unit: ms

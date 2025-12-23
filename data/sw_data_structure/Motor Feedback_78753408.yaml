@@ -7,12 +7,12 @@ fields:
   - description: Indicates availability and validity of motor position feedback.
     multiplicity: 1
     name: feedback_status
-    range: N/A
-    resolution: N/A
-    unit: Enum. NOT_PRESENT, OK, INVALID, LOST
+    range: NOT_PRESENT, OK, INVALID, LOST
+    resolution: n/a
+    unit: enum
   - description: Motor electrical/mechanical speed derived from encoder or Hall feedback.
     multiplicity: 1
     name: motor_speed_rpm
-    range: 0 … 10 000 RPM
-    resolution: 1 RPM
-    unit: RPM
+    range: 0 .. 10000 rpm
+    resolution: 1 rpm
+    unit: rpm
